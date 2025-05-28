@@ -2,8 +2,8 @@ import Fusion, { Children, New } from "@rbxts/fusion";
 import { CornerToken, GradientTokens } from "shared/FusionUI/theme";
 
 const { Value } = Fusion;
-const DefaultWidth = 300;
-const DefaultHeight = 300;
+const DefaultWidth = 200;
+const DefaultHeight = 200;
 
 const Defaults = {
 	AnchorPoint: new Vector2(0.5, 0.5),

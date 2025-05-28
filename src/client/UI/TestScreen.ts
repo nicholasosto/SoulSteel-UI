@@ -1,4 +1,4 @@
-import Fusion, { Children, Computed, New, Value } from "@rbxts/fusion";
+import { Children, Computed, New, Value } from "@rbxts/fusion";
 import { Players } from "@rbxts/services";
 import { BaseFrame, BaseFrameProps, Panel, Lists } from "shared/FusionUI";
 import { DemoFillBar, FillBarBase, FillBarBaseProps } from "shared/FusionUI/atoms/fillbar/FillBarBase";
@@ -25,8 +25,13 @@ export const TestScreen = () => {
 				AnchorPoint: new Vector2(0.5, 0.5),
 				[Children]: [
 					Lists.HorizontalList([
-						BaseFrame({ Position: UDim2.fromOffset(-300, 0), Children: [] }),
 						BaseFrame({
+							Name: "ButtonContainer",
+							Position: UDim2.fromOffset(-300, 0),
+							Children: [DemoFillBar()],
+						}),
+						BaseFrame({
+							Name: "FillBarContainer",
 							Position: UDim2.fromOffset(0, 0),
 							Children: Lists.VerticalList([fillBarDummy1, DemoFillBar(), DemoFillBar()]),
 						}),
