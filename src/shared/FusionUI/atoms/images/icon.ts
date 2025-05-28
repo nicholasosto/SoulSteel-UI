@@ -1,3 +1,5 @@
+import { New } from "@rbxts/fusion";
+
 export const IconAssets = {
 	Attribute: {
 		Strength: "rbxassetid://127745571044516",
@@ -30,9 +32,14 @@ export const IconAssets = {
 		Weapon: "rbxassetid://98384046526938",
 		Accessory: "rbxassetid://98384046526938",
 	},
+	Ability: {
+		Unassigned: "rbxassetid://98384046526938",
+		Flame_Sythe: "rbxassetid://108246514585300",
+		HallowHold: "rbxassetid://79001631229851",
+		Blood_Siphon: "rbxassetid://135950973087916",
+		Blood_Horror: "rbxassetid://82257212198629",
+		Blood_Elemental: "rbxassetid://122556254156811",
+		Spirit_Circles: "rbxassetid://78703065651895",
+	},
 };
 
-export const TextureAssets = {
-	DarkGrainy: "rbxassetid://79442728541286",
-	AngelicMarble: "rbxassetid://121566852339881",
-};

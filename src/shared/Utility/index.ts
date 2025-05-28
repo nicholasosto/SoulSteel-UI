@@ -1,2 +1,2 @@
 export * from "./AudioUtility";
-export * from "./ImageUtility";
+export * from "../FusionUI/atoms/images/icon";

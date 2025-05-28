@@ -13,21 +13,6 @@ export enum CharacterInfoCardImages {
 	AvatarFrame = "rbxassetid://87436240067342",
 }
 
-// export enum MenuPanelIcon {
-// 	CharacterPanel = "rbxassetid://100274464430589",
-// 	EquipmentPanel = "rbxassetid://132702292243603",
-// 	TeleportPanel = "rbxassetid://127118741571164",
-// 	SetttingsPanel = "rbxassetid://122289639886993",
-// 	FriendsPanel = "rbxassetid://95069877371395",
-// }
-
-// export enum ControlIcons {
-// 	Increase = "rbxassetid://102421835119714",
-// 	Decrease = "rbxassetid://78091115085992",
-// 	Close = "rbxassetid://91437543746962",
-// 	TripleArrow = "rbxassetid://109760688890484",
-// }
-
 export enum ButtonFrame {
 	GemButtonFrame = "rbxassetid://98254772605981",
 }
@@ -58,12 +43,7 @@ export enum HUDButtonImageIds {
 
 export enum AbilityButtonImageIds {
 	UnassignedSlot = "rbxassetid://98384046526938",
-	Flame_Sythe = "rbxassetid://108246514585300",
-	HallowHold = "rbxassetid://79001631229851",
-	Blood_Siphon = "rbxassetid://135950973087916",
-	Blood_Horror = "rbxassetid://82257212198629",
-	Blood_Elemental = "rbxassetid://122556254156811",
-	Spirit_Circles = "rbxassetid://78703065651895",
+	
 }
 
 export enum FrameTextures {
