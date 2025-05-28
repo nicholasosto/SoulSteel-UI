@@ -12,7 +12,7 @@ export interface PanelProps {
 	AnchorPoint?: Vector2;
 	Title?: string;
 	OnClose?: () => void;
-	Children?: Instance[] | Instance;
+	[Children]?: Instance[] | Instance;
 }
 
 /** Basic panel with title bar and close button. */
@@ -51,7 +51,7 @@ export const Panel = (props: PanelProps) => {
 				Size: new UDim2(1, 0, 1, -30),
 				Position: new UDim2(0, 0, 0, 30),
 				BackgroundTransparency: 1,
-				[Children]: props.Children,
+				[Children]: props[Children] ?? [],
 			}),
 		},
 		Visible: Computed(() => isOpen.get()),

@@ -2,6 +2,17 @@ import Fusion, { Children, New } from "@rbxts/fusion";
 import { CornerToken, GradientTokens } from "shared/FusionUI/theme";
 
 const { Value } = Fusion;
+const DefaultWidth = 300;
+const DefaultHeight = 300;
+
+const Defaults = {
+	AnchorPoint: new Vector2(0.5, 0.5),
+	Position: UDim2.fromScale(0.5, 0.5),
+	Size: UDim2.fromOffset(DefaultWidth, DefaultHeight),
+	BackgroundColor3: new Color3(0.2, 0.2, 0.2),
+	BackgroundTransparency: 0.5,
+	BorderSizePixel: 2,
+};
 
 export interface BaseFrameProps {
 	Name?: string;
@@ -17,11 +28,11 @@ export interface BaseFrameProps {
 export const BaseFrame = (props: BaseFrameProps) =>
 	New("Frame")({
 		Name: props.Name ?? "BaseFrame",
-		Size: props.Size ?? UDim2.fromScale(1, 1),
-		Position: props.Position ?? UDim2.fromScale(0, 0),
-		AnchorPoint: props.AnchorPoint ?? new Vector2(0, 0),
-		BackgroundColor3: props.BackgroundColor3 ?? new Color3(0.1, 0.1, 0.1),
-		BackgroundTransparency: props.BackgroundTransparency ?? 0,
+		Size: props.Size ?? Defaults.Size,
+		Position: props.Position ?? Defaults.Position,
+		AnchorPoint: props.AnchorPoint ?? Defaults.AnchorPoint,
+		BackgroundColor3: props.BackgroundColor3 ?? Defaults.BackgroundColor3,
+		BackgroundTransparency: props.BackgroundTransparency ?? Defaults.BackgroundTransparency,
 		[Children]: {
 			Corner: CornerToken(4),
 			Gradient: GradientTokens.DarkGradient(),
