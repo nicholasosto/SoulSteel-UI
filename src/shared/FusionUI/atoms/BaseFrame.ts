@@ -1,5 +1,5 @@
 import Fusion, { Children, New } from "@rbxts/fusion";
-import { CornerToken, GradientTokens } from "../../theme";
+import { CornerToken, GradientTokens } from "shared/FusionUI/theme";
 
 const { Value } = Fusion;
 

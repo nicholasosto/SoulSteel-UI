@@ -1,5 +1,5 @@
 import Fusion, { Children, Computed, New } from "@rbxts/fusion";
-import { CornerToken } from "../../theme";
+import { CornerToken } from "../theme";
 import { IconButton } from "../atoms";
 
 const { Value } = Fusion;
