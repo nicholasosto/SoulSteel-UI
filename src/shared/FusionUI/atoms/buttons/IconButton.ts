@@ -1,5 +1,5 @@
 import { PlaySound } from "shared/Utility";
-import { BasicButton } from "shared/FusionUI/atoms/BasicButton";
+import { BasicButton } from "../buttons/BasicButton";
 
 export interface IconButtonProps {
 	Name: string;

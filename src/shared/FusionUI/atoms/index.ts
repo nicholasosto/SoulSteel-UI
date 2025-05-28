@@ -1,2 +1,2 @@
 export * from "./BaseFrame";
-export * from "./IconButton";
+export * from "./buttons";
