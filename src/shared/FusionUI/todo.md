@@ -1,4 +1,5 @@
 # Agents and Developers Tracker
+
     This document is used to track agents, developers, and their tasks or suggestions. Agents should use this as an organized scratchpad for their work.
 
 ## Agent Suggestions (place notable suggestions here)
