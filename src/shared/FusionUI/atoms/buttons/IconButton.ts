@@ -15,7 +15,7 @@ export const IconButton = (props: IconButtonProps) => {
 	const { Instance } = BasicButton({
 		Name: props.Name,
 		Image: props.Icon,
-		Size: props.Size ?? new UDim2(0, 40, 0, 40),
+		Size: props.Size ?? UDim2.fromScale(1, 1),
 		AnchorPoint: props.AnchorPoint ?? new Vector2(0.5, 0.5),
 		Position: props.Position ?? new UDim2(0.5, 0, 0.5, 0),
 	});
