@@ -3,11 +3,13 @@
 
 ## Agent Suggestions (place notable suggestions here)
 
-1. ADD_SUGGESTION - Placeholder for adding a suggestion.
+1. Implement an ActionBar molecule for ability slots.
+2. Refactor list utilities to avoid unnecessary Fusion.Value wrapping of item arrays.
+3. Consider creating a common container base to share styling between Panel and BaseFrame.
 
 ## Agent Task remarks (place notable anomolies or issues here)
 
-1. ADD_TASK - Placeholder for adding a task remark.
+1. Remove unused imports across FusionUI modules.
 
 ## Feature Tracker Progress (create checklist for features)
 

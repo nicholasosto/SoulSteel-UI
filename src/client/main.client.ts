@@ -1,5 +1,4 @@
 import Fusion from "@rbxts/fusion";
-import { Panel, PanelProps } from "shared/FusionUI";
 import { Players } from "@rbxts/services";
 
 const player = Players.LocalPlayer;
