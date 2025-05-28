@@ -1,8 +1,7 @@
 import Fusion from "@rbxts/fusion";
-import * as Atoms from "shared/FusionUI/atoms";
 import * as Molecules from "shared/FusionUI/molecules";
 
-const { New, Value, Children } = Fusion;
+const { New, Children } = Fusion;
 
 export interface CharacterCardProps {
 	Name: Fusion.Value<string>;

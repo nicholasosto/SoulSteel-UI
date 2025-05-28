@@ -1,6 +1,6 @@
 import { Children, Computed, New, Value } from "@rbxts/fusion";
 import { Players } from "@rbxts/services";
-import { BaseFrame, BaseFrameProps, Panel, Lists } from "shared/FusionUI";
+import { BaseFrame, Panel, Lists } from "shared/FusionUI";
 import { DemoFillBar, FillBarBase, FillBarBaseProps } from "shared/FusionUI/atoms/fillbar/FillBarBase";
 
 const fillbarProps: FillBarBaseProps = {

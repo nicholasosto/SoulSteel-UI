@@ -4,7 +4,7 @@ const { New, Value, Children } = Fusion;
 
 export interface BasicListProps {
 	Items: Instance[];
-	ListLayout: UIListLayout | UIGridLayout | UIListLayout;
+	ListLayout: UIListLayout | UIGridLayout;
 	ScrollingEnabled?: boolean;
 	Name?: string;
 	Size?: UDim2;
