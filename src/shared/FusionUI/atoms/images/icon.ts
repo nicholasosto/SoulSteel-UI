@@ -42,4 +42,3 @@ export const IconAssets = {
 		Spirit_Circles: "rbxassetid://78703065651895",
 	},
 };
-

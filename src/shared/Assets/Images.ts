@@ -43,7 +43,6 @@ export enum HUDButtonImageIds {
 
 export enum AbilityButtonImageIds {
 	UnassignedSlot = "rbxassetid://98384046526938",
-	
 }
 
 export enum FrameTextures {

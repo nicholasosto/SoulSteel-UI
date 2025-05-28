@@ -7,7 +7,6 @@ const player = Players.LocalPlayer;
 const playerGui = player.WaitForChild("PlayerGui") as PlayerGui;
 const { New } = Fusion;
 
-
 const LeftPanel = Panel({
 	Name: "LeftPanel",
 	Size: new UDim2(0, 300, 1, 0),
