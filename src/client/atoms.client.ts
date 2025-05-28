@@ -2,10 +2,24 @@ import Fusion from "@rbxts/fusion";
 import * as Atoms from "shared/FusionUI/atoms";
 import { Players } from "@rbxts/services";
 import { WeaponImages } from "shared/Assets";
+import { Panel } from "shared/FusionUI";
 
 const player = Players.LocalPlayer;
 const playerGui = player.WaitForChild("PlayerGui") as PlayerGui;
 const { New } = Fusion;
+
+// Define the LeftPanel using the Panel component
+const LeftPanel = Panel({
+	Name: "LeftPanel",
+	Size: new UDim2(0, 300, 1, 0),
+	Position: new UDim2(0, 0, 0, 0),
+	AnchorPoint: new Vector2(0, 0),
+	Title: "Left Panel",
+	OnClose: () => {
+		print("Left Panel closed");
+	},
+	Children: [Atoms.AvatarFrame],
+});
 
 const AtomsGUI = New("ScreenGui")({
 	Name: "AtomsGui",
@@ -21,10 +35,6 @@ const AtomsGUI = New("ScreenGui")({
 				print("IconButton clicked");
 			},
 		}),
-	},
-	[Fusion.OnEvent("ChildAdded")]: (child: Instance) => {
-		if (child.Name === "TestPanel") {
-			print("TestPanel added to MainGui");
-		}
+		LeftPanel: LeftPanel,
 	},
 });
