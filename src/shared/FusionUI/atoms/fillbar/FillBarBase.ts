@@ -1,3 +1,25 @@
+/// <reference types="@rbxts/types" />
+
+/**
+ * @file        FillBarBase.ts
+ * @module      FillBarBase
+ * @layer       Atom
+ * @description Base Fusion atom for fill-based bars.
+ *
+ * ╭───────────────────────────────╮
+ * │  Soul Steel · Coding Guide    │
+ * │  Fusion v4 · Strict TS · ECS  │
+ * ╰───────────────────────────────╯
+ *
+ * @author       Trembus
+ * @license      MIT
+ * @since        0.1.0
+ * @lastUpdated  2025-05-29 by Codex – Header update
+ *
+ * @dependencies
+ *   @rbxts/fusion ^0.4.0
+ */
+
 import Fusion from "@rbxts/fusion";
 
 const { New, Children, Computed } = Fusion;

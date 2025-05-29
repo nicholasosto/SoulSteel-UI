@@ -1,3 +1,25 @@
+/// <reference types="@rbxts/types" />
+
+/**
+ * @file        IconButton.ts
+ * @module      IconButton
+ * @layer       Atom
+ * @description Fusion atom for icon buttons with click sound.
+ *
+ * ╭───────────────────────────────╮
+ * │  Soul Steel · Coding Guide    │
+ * │  Fusion v4 · Strict TS · ECS  │
+ * ╰───────────────────────────────╯
+ *
+ * @author       Trembus
+ * @license      MIT
+ * @since        0.1.0
+ * @lastUpdated  2025-05-29 by Codex – Header update
+ *
+ * @dependencies
+ *   @rbxts/fusion ^0.4.0
+ */
+
 import { PlaySound } from "shared/Utility";
 import { BasicButton } from "../buttons/BasicButton";
 

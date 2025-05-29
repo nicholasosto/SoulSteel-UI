@@ -1,3 +1,28 @@
+/// <reference types="@rbxts/types" />
+
+/**
+ * @file        BaseFrame.ts
+ * @module      BaseFrame
+ * @layer       Atom
+ * @description Fusion atom providing a styled container frame.
+ *
+ * ╭───────────────────────────────╮
+ * │  Soul Steel · Coding Guide    │
+ * │  Fusion v4 · Strict TS · ECS  │
+ * ╰───────────────────────────────╯
+ *
+ * @author       Trembus
+ * @license      MIT
+ * @since        0.1.0
+ * @lastUpdated  2025-05-29 by Codex – Header update
+ *
+ * @dependencies
+ *   @rbxts/fusion ^0.4.0
+ *
+ * @remarks
+ *   Uses theme colors from shared/FusionUI/theme.
+ */
+
 import Fusion, { Children, New } from "@rbxts/fusion";
 import { CornerToken, GradientTokens } from "shared/FusionUI/theme";
 
