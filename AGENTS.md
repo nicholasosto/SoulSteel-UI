@@ -21,8 +21,9 @@ src/
     ui/
       atoms/
       molecules/
-      organisms/
-      screens/
+      organisms/ 
+      screens/     # UI components (Fusion)
+      states/ # UI state slices (Value, Computed, Observer)
   shared/      # DTOs, utility libs, config constants
   server/      # gameplay services & data pipelines
   tests/       # TestEZ unit tests (mirror src tree)
@@ -51,43 +52,20 @@ When adding a new UI component, provide:
 
 ---
 
-## 4  Gameplay & Systems Patterns
-
-* **DTOs**: Every remote procedure receives & returns a serialisable DTO from `shared/dto/`.
-* **Services → Components**: Server‑side Services own Component collections (ECS‑lite pattern).
-* **Ability Pipeline**: Skill → Resolver → EffectProcessor → StatApplication. New abilities must implement the interface contract.
-* **Sockets & Gems**: Source of truth is `Character.soulSlots[]`; never mutate weapon stats directly.
-
----
-
-## 5  Testing & Quality Gates
+## 4  Testing & Quality Gates
 
 ```jsonc
 // package.json scripts
-"test":   "roblox-ts test",
-"lint":   "eslint --ext .ts src",
-"format": "prettier --check \"src/**/*.{ts,tsx}\""
+    "build": "rbxtsc",
+    "watch": "rbxtsc -w",
+    "lint": "eslint \"src/**/*.{ts,tsx}\"",
+    "lint:fix": "eslint \"src/**/*.{ts,tsx}\" --fix"
 ```
 
 * **Coverage ≥ 80 %** on `shared/` and `server/`.
 * **CI** blocks merge if lint or tests fail.
 * Write **property‑based tests** for math/utility libs.
 
----
-
-## 6  Commit Messages (Conventional Commits)
-
-```
-feat(ui): add CooldownBarAtom
-fix(server): prevent nil reference in StatService
-refactor(shared): migrate item schema v2 → v3
-```
-
-* Use **singular present‑tense imperative**.
-* Include scope in parentheses.
-* Reference JIRA ticket with `PSD‑####` in footer where relevant.
-
----
 
 ## 7  AI Agent Directives
 
