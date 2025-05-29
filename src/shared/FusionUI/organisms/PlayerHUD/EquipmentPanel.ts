@@ -1,7 +1,16 @@
-import { BaseFrame, IconAssets, SlotButton, SlotButtonProps } from "../../atoms";
-import Fusion from "@rbxts/fusion";
+/// <reference types="@rbxts/types" />
 
-const { New, Children, Value, Computed, OnEvent } = Fusion;
+/**
+ * @file        EquipmentPanel.ts
+ * @module      EquipmentPanel
+ * @layer       Organism
+ * @description Displays equipment slots for the player.
+ */
+
+import Fusion from "@rbxts/fusion";
+import { BaseFrame, IconAssets, SlotButton, SlotButtonProps } from "../../atoms";
+
+const { Value } = Fusion;
 
 const HelmetProps: SlotButtonProps = {
 	SlotType: "Helmet",
