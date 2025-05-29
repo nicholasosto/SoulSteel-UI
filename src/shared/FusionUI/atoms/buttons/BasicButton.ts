@@ -1,3 +1,25 @@
+/// <reference types="@rbxts/types" />
+
+/**
+ * @file        BasicButton.ts
+ * @module      BasicButton
+ * @layer       Atom
+ * @description Fusion atom for buttons with hover and press states.
+ *
+ * ╭───────────────────────────────╮
+ * │  Soul Steel · Coding Guide    │
+ * │  Fusion v4 · Strict TS · ECS  │
+ * ╰───────────────────────────────╯
+ *
+ * @author       Trembus
+ * @license      MIT
+ * @since        0.1.0
+ * @lastUpdated  2025-05-29 by Codex – Header update
+ *
+ * @dependencies
+ *   @rbxts/fusion ^0.4.0
+ */
+
 import Fusion from "@rbxts/fusion";
 
 const { New, OnEvent, Value, Children } = Fusion;

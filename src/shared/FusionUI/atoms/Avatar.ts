@@ -1,6 +1,27 @@
-// FAvatar.ts
-// This file contains the FAvatar component which is used to create an avatar frame.
-// It exports the CreateAvatarFrame function which takes in a position and size and returns a new instance of the avatar frame.
+/// <reference types="@rbxts/types" />
+
+/**
+ * @file        Avatar.ts
+ * @module      AvatarFrame
+ * @layer       Atom
+ * @description Fusion atom that renders a player avatar bust inside a frame.
+ *
+ * ╭───────────────────────────────╮
+ * │  Soul Steel · Coding Guide    │
+ * │  Fusion v4 · Strict TS · ECS  │
+ * ╰───────────────────────────────╯
+ *
+ * @author       Trembus
+ * @license      MIT
+ * @since        0.1.0
+ * @lastUpdated  2025-05-29 by Codex – Header update
+ *
+ * @dependencies
+ *   @rbxts/fusion ^0.4.0
+ *
+ * @remarks
+ *   Uses theme colors from shared/FusionUI/theme.
+ */
 
 import { Players } from "@rbxts/services";
 import Fusion from "@rbxts/fusion";
