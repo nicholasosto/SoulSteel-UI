@@ -33,7 +33,7 @@ export const TestScreen = () => {
 						BaseFrame({
 							Name: "FillBarContainer",
 							Position: UDim2.fromOffset(0, 0),
-							Children: Lists.VerticalList([fillBarDummy1, DemoFillBar(), DemoFillBar()]),
+							Children: [Lists.VerticalList([fillBarDummy1, DemoFillBar(), DemoFillBar()])],
 						}),
 						BaseFrame({
 							Position: UDim2.fromOffset(304, 0),

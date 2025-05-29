@@ -46,7 +46,7 @@ export interface BaseFrameProps {
 	AnchorPoint?: Vector2;
 	BackgroundColor3?: Color3;
 	BackgroundTransparency?: number;
-	Children?: Instance[] | Instance;
+	Children?: Instance[] | Record<string, Instance>;
 }
 
 /** Simple frame with corner and gradient tokens. */
