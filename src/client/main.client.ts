@@ -1,20 +1,12 @@
-import Fusion from "@rbxts/fusion";
+/** main.client.ts */
 import { Players } from "@rbxts/services";
+const localPlayer = Players.LocalPlayer;
 
-const player = Players.LocalPlayer;
-const playerGui = player.WaitForChild("PlayerGui") as PlayerGui;
-const { New } = Fusion;
+/* Connections ========================================= */
 
-const MAINGUI = New("ScreenGui")({
-	Name: "MainGui",
-	DisplayOrder: 1000,
-	ResetOnSpawn: false,
-	Parent: playerGui,
-	IgnoreGuiInset: true,
-	[Fusion.Children]: {},
-	[Fusion.OnEvent("ChildAdded")]: (child: Instance) => {
-		if (child.Name === "TestPanel") {
-			print("TestPanel added to MainGui");
-		}
-	},
+// Character Appearance Loaded
+localPlayer.CharacterAppearanceLoaded.Connect(() => {
+	// Initialize the UI components here
+	// For example, you can create a PlayerHUD or CharacterCard
+	print("Main client Character Appearance Loaded");
 });
