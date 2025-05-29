@@ -20,7 +20,7 @@
  *   @rbxts/fusion ^0.4.0
  */
 
-export * from "./ResourceBar";
+export * from "../../molecules/ResourceBar";
 // export * from "./LoadingBar";
 // export * from "./ExperienceBar";
 // export * from "./CooldownBar";

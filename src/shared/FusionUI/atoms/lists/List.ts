@@ -25,7 +25,7 @@ import Fusion from "@rbxts/fusion";
 const { New, Value, Children } = Fusion;
 
 export interface BasicListProps {
-	Items: Instance[];
+	Children: Instance[] | Record<string, Instance>;
 	ListLayout: UIListLayout | UIGridLayout;
 	ScrollingEnabled?: boolean;
 	Name?: string;
@@ -36,7 +36,7 @@ export interface BasicListProps {
 }
 
 const BasicList = (props: BasicListProps): Frame | ScrollingFrame => {
-	const items = Value(props.Items);
+	const items = Value(props.Children);
 	const listLayout = props.ListLayout;
 
 	let listFrame: Frame | ScrollingFrame;
@@ -84,7 +84,7 @@ const HorizontalCentered = () =>
 export const Lists = {
 	VerticalList: (items: Instance[]) =>
 		BasicList({
-			Items: items,
+			Children: items,
 			ListLayout: VerticalCentered(),
 			ScrollingEnabled: false,
 			Name: "VerticalList",
@@ -95,7 +95,7 @@ export const Lists = {
 		}),
 	HorizontalList: (items: Instance[]) =>
 		BasicList({
-			Items: items,
+			Children: items,
 			ListLayout: HorizontalCentered(),
 			ScrollingEnabled: false,
 			Name: "HorizontalList",

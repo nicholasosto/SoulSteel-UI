@@ -29,28 +29,35 @@ import { CornerToken, StrokeToken, GradientTokens } from "shared/FusionUI/theme"
 
 const { New, Children } = Fusion;
 
-/* Avatar Image Label */
-const AvatarImageLabel = New("ImageLabel")({
-	Name: "AvatarFrameImage",
-	Size: new UDim2(1, 0, 1, 0),
-	Image: "rbxassetid://87436240067342", // Frame image ID
-	[Children]: [CornerToken(4), StrokeToken(2)],
-	BackgroundTransparency: 1,
-	ZIndex: 10,
-});
+interface AvatarProps {
+	Name?: string;
+	Size?: UDim2;
+	Position?: UDim2;
+}
 
-/* Avatar Frame */
-function AvatarBust(position: UDim2, size: UDim2): Frame {
-	const avatarFrame = New("Frame")({
-		Name: "AvatarFrame",
-		Size: size,
-		Position: position,
-		AnchorPoint: new Vector2(0, 0),
-		[Children]: [
-			GradientTokens.DarkGradient(),
-			AvatarImageLabel,
-			CornerToken(4),
-			New("ImageLabel")({
+export const AvatarCard = (props: AvatarProps) => {
+	const container = New("Frame")({
+		Name: props.Name ?? "AvatarCard",
+		Size: props.Size ?? new UDim2(0, 60, 0, 60),
+		Position: props.Position ?? new UDim2(0, 0, 0, 0),
+		BackgroundTransparency: 1,
+		[Children]: {
+			OuterFrame: New("Frame")({
+				Name: "OuterFrame",
+				Size: new UDim2(1, 0, 1, 0),
+				BackgroundTransparency: 1,
+				[Children]: [
+					New("ImageLabel")({
+						Name: "AvatarFrameImage",
+						Size: new UDim2(1, 0, 1, 0),
+						Image: "rbxassetid://87436240067342", // Frame image ID
+						[Children]: [CornerToken(4), StrokeToken(2)],
+						BackgroundTransparency: 1,
+						ZIndex: 10,
+					}),
+				],
+			}),
+			AvatarImage: New("ImageLabel")({
 				Name: "AvatarImage",
 				Size: new UDim2(1, 0, 1, 0),
 				Image: Players.GetUserThumbnailAsync(
@@ -60,10 +67,9 @@ function AvatarBust(position: UDim2, size: UDim2): Frame {
 				)[0],
 				BackgroundTransparency: 1,
 			}),
-		],
+			Gradient: GradientTokens.DarkGradient(),
+			Corner: CornerToken(4),
+		},
 	});
-	return avatarFrame;
-}
-/* Avatar Frame */
-const AvatarFrame = AvatarBust(new UDim2(0, 0, 0, 0), new UDim2(0, 100, 0, 100));
-export { AvatarFrame };
+	return container;
+};

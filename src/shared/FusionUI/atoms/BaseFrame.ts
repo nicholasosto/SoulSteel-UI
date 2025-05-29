@@ -46,6 +46,7 @@ export interface BaseFrameProps {
 	AnchorPoint?: Vector2;
 	BackgroundColor3?: Color3;
 	BackgroundTransparency?: number;
+	LayoutOrder?: number;
 	Children?: Instance[] | Record<string, Instance>;
 }
 
@@ -58,6 +59,7 @@ export const BaseFrame = (props: BaseFrameProps) =>
 		AnchorPoint: props.AnchorPoint ?? Defaults.AnchorPoint,
 		BackgroundColor3: props.BackgroundColor3 ?? Defaults.BackgroundColor3,
 		BackgroundTransparency: props.BackgroundTransparency ?? Defaults.BackgroundTransparency,
+		LayoutOrder: props.LayoutOrder ?? 1,
 		[Children]: {
 			Corner: CornerToken(4),
 			Gradient: GradientTokens.DarkGradient(),

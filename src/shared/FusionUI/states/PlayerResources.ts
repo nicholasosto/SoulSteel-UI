@@ -1,26 +1,10 @@
 import Fusion, { Computed } from "@rbxts/fusion";
 import { Players } from "@rbxts/services";
+import { createFusionResource } from "./Helpers/FusionResource";
 const LocalPlayer = Players.LocalPlayer;
 
-interface FustionFillBar {
-	Current: Fusion.Value<number> | number;
-	Max: Fusion.Value<number> | number;
-	LabelText?: Computed<string> | string;
-}
-
-interface FusionResource extends FustionFillBar {
-	RegenRate: Computed<number>;
-}
-
-interface ResourceBarsDTO {
-	Health: FusionResource;
-	Mana: FusionResource;
-	Stamina: FusionResource;
-}
-
 export class PlayerResources {
-	protected static readonly Health: FusionResource;
-	protected static readonly Mana: FusionResource;
-	protected static readonly Stamina: FusionResource;
-	private static Initialized(resourceBarsDTO: ResourceBarsDTO) {}
+	public static HealthResource = createFusionResource(1, 100, new Color3(0.8, 0.1, 0.1));
+	public static SoulPowerResource = createFusionResource(50, 100, new Color3(0.1, 0.1, 0.8));
+	public static StaminaResource = createFusionResource(75, 100, new Color3(0.1, 0.8, 0.1));
 }

@@ -30,6 +30,7 @@ export interface FillBarBaseProps {
 	LabelText?: Fusion.Computed<string>;
 	Name?: string;
 	Height?: number;
+	LayoutOrder?: number;
 }
 
 export function FillBarBase(props: FillBarBaseProps) {
