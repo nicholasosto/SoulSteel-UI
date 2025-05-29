@@ -1,5 +1,7 @@
-/**
- *
+/** Stub for CharacterCard component
+ *  This component is responsible for displaying the player's character information, such as health, level, and other stats.
+ *  It will be used in the PlayerHUD to provide a visual representation of the player's character.
+ *  Currently, it is a placeholder and will be expanded in the future.
  */
 
 import Fusion from "@rbxts/fusion";

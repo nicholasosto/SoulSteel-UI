@@ -1,4 +1,4 @@
-import { IconAssets, SlotButton, SlotButtonProps } from "../atoms";
+import { BaseFrame, IconAssets, SlotButton, SlotButtonProps } from "../../atoms";
 import Fusion from "@rbxts/fusion";
 
 const { New, Children, Value, Computed, OnEvent } = Fusion;
@@ -48,18 +48,21 @@ const Accessory2Props: SlotButtonProps = {
 	},
 };
 
-export interface EquipmentPanelProps {
-	EquipmentSlots: SlotButtonProps[];
-	SelectedSlot: Fusion.Value<string>;
-}
-export const EquipmentPanel = (props: EquipmentPanelProps) => {
-	const { EquipmentSlots } = props;
+export const EquipmentPanel = () => {
+	const children = [
+		SlotButton(HelmetProps),
+		SlotButton(ChestplateProps),
+		SlotButton(WeaponProps),
+		SlotButton(Accessory1Props),
+		SlotButton(Accessory2Props),
+	];
 
-	return New("Frame")({
+	const container = BaseFrame({
 		Name: "EquipmentPanel",
-		BackgroundColor3: Color3.fromRGB(50, 50, 50),
-		Size: UDim2.fromScale(0.3, 0.5),
+		Size: UDim2.fromOffset(300, 400),
 		Position: UDim2.fromScale(0.7, 0.25),
-		[Children]: EquipmentSlots.map((slotProps) => SlotButton(slotProps)),
+		Children: children,
 	});
+
+	return container;
 };
