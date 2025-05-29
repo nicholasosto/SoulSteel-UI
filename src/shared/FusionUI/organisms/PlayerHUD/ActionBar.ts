@@ -1,15 +1,22 @@
-// stub for ActionBar component
+/// <reference types="@rbxts/types" />
+
+/**
+ * @file        ActionBar.ts
+ * @module      HUDActionBar
+ * @layer       Organism
+ * @description Container for the player's ability bar on the HUD.
+ */
+
 import Fusion from "@rbxts/fusion";
-import { New, Children } from "@rbxts/fusion";
+import { BaseFrame } from "../../atoms";
+import { ActionBar as SlotBar } from "../../molecules";
 
-export const ActionBar = () => {
-	const Container = New("Frame")({
+/** Action bar positioned at the bottom centre of the screen. */
+export const ActionBar = () =>
+	BaseFrame({
 		Name: "ActionBar",
-		BackgroundColor3: Color3.fromRGB(50, 50, 50),
-		Size: UDim2.fromOffset(600, 100),
-		Position: new UDim2(0.5, 0, 1, -150),
+		Size: UDim2.fromOffset(320, 70),
+		Position: new UDim2(0.5, 0, 1, -90),
 		AnchorPoint: new Vector2(0.5, 1),
+		Children: SlotBar({ SlotCount: 5 }),
 	});
-
-	return Container;
-};
