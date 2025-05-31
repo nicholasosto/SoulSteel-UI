@@ -69,10 +69,10 @@ When adding a new UI component, provide:
 ## 5  AI Agent Directives
 
 1. **Follow coding conventions** in this guide.
-   - Use `@rbxts` types, strict TS, and Fusion v4 patterns.
-   - **No** Roblox‑native APIs outside `@rbxts` wrappers.
-   - **No** hard‑coded values; use data files or constants.
-   - **No** direct Instance manipulation; always use Fusion.
+   * Use `@rbxts` types, strict TS, and Fusion v4 patterns.
+   * **No** Roblox‑native APIs outside `@rbxts` wrappers.
+   * **No** hard‑coded values; use data files or constants.
+   * **No** direct Instance manipulation; always use Fusion.
 2. **Explain rationale** in PR description (summary + screenshots/tests).
 3. **Never commit secrets or API keys**.
 4. **Follow lint & format before commit** (`npm run lint && npm run format`).
@@ -133,4 +133,3 @@ import { theme } from "shared/theme";
 ```
 
 > Welcome to Soul Steel — ship code, forge souls, break nothing! ✨
-
