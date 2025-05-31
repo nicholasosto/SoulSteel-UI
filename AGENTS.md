@@ -66,10 +66,13 @@ When adding a new UI component, provide:
 * **CI** blocks merge if lint or tests fail.
 * Write **property‑based tests** for math/utility libs.
 
+## 5  AI Agent Directives
 
-## 7  AI Agent Directives
-
-1. **Small diffs**: keep PRs under 400 lines.
+1. **Follow coding conventions** in this guide.
+   - Use `@rbxts` types, strict TS, and Fusion v4 patterns.
+   - **No** Roblox‑native APIs outside `@rbxts` wrappers.
+   - **No** hard‑coded values; use data files or constants.
+   - **No** direct Instance manipulation; always use Fusion.
 2. **Explain rationale** in PR description (summary + screenshots/tests).
 3. **Never commit secrets or API keys**.
 4. **Follow lint & format before commit** (`npm run lint && npm run format`).
@@ -77,7 +80,7 @@ When adding a new UI component, provide:
 
 ---
 
-## 8  Extensibility Pointers
+## 6  Extensibility Pointers
 
 * New domains (e.g., Cyber) must register with `DomainRegistry` and supply:
 
@@ -87,14 +90,14 @@ When adding a new UI component, provide:
 
 ---
 
-## 9  Onboarding Checklist
+## 7  Onboarding Checklist
 
 * [ ] Clone repo & run `npm ci`
 * [ ] `rojo serve` to sandbox locally
 * [ ] Run `npm test` & verify all green
 * [ ] Read `docs/architecture.md`
 
-## 10 Code Header Style
+## 8 Code Header Style
 
 *Prepend the full TSDoc header template (see Appendix A) whenever you create a new `.ts` file.*
 
