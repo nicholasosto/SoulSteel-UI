@@ -14,7 +14,15 @@
 
 import Fusion from "@rbxts/fusion";
 import { Players } from "@rbxts/services";
-import { ActionBar, CharacterCard, EquipmentPanel, MenuBar, CurrencyCard } from "shared/FusionUI";
+import {
+	ActionBar,
+	CharacterCard,
+	EquipmentPanel,
+	MenuBar,
+	CurrencyCard,
+	FillBarBase,
+	FillBarBaseProps,
+} from "shared/FusionUI";
 
 const { New, Children } = Fusion;
 
@@ -35,13 +43,11 @@ const MenuBarSP = {
 	Position: UDim2.fromOffset(Padding, CharacterCardSP.Size.Y.Offset + Padding),
 };
 
-// ActionBar
-const ActionBarSP = {
-	Size: UDim2.fromOffset(500, 100),
-	AnchorPoint: new Vector2(0.5, 1),
-	Position: UDim2.fromScale(0.5, 1).sub(new UDim2(0, 0, 0, Padding)),
+// FillBarBaseProps
+const fillBarBaseProps: FillBarBaseProps = {
+	Current: Fusion.Value(50), // Example current value
+	Max: Fusion.Value(100), // Example max value
 };
-
 /** Player HUD screen mounted under the local PlayerGui. */
 export const PlayerHUD = () =>
 	New("ScreenGui")({
@@ -53,8 +59,8 @@ export const PlayerHUD = () =>
 		[Children]: {
 			CharacterCard: CharacterCard(CharacterCardSP),
 			MenuBar: MenuBar(MenuBarSP),
-			//ActionBar: ActionBar(),
+			ActionBar: ActionBar({ SlotCount: 5 }),
 			CurrencyCard: CurrencyCard(),
-			//EquipmentPanel: EquipmentPanel(),
+			FillBarTest: FillBarBase(fillBarBaseProps),
 		},
 	});

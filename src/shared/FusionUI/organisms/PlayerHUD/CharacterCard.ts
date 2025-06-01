@@ -8,11 +8,11 @@
  */
 
 import Fusion, { Children, New } from "@rbxts/fusion";
-import { AvatarCard, BaseFrame } from "shared/FusionUI/atoms";
-import { ResourceBar } from "shared/FusionUI/atoms/fillbar";
+import { AvatarCard, BaseFrame, ResourceBar } from "shared/FusionUI/atoms";
 import { PlayerInfoState } from "shared/FusionUI/states/PlayerInfo";
 import { LayoutTokens } from "shared/FusionUI/theme";
 import { PlayerResources } from "shared/FusionUI/states";
+import { LevelBar } from "shared/FusionUI/molecules";
 
 const { Value, Computed } = Fusion;
 
@@ -59,6 +59,22 @@ const TopRow = () => {
 	return avatarCard;
 };
 
+const BottomRow = () => {
+	const container = New("Frame")({
+		Name: "BottomRow",
+		Size: BottomRowSize,
+		BackgroundTransparency: 1,
+		[Children]: {
+			LevelBar: LevelBar({
+				Level: PlayerInfoState.Level,
+				Experience: PlayerInfoState.Experience,
+				MaxExperience: PlayerInfoState.MaxExperience,
+			}),
+		},
+	});
+	return container;
+};
+
 /**
  * Character Card Component
  * Main Container for displaying player avatar, level, and resources (health, soulpower, stamina) information.
@@ -77,8 +93,25 @@ export const CharacterCard = (props: CharacterCardProps) => {
 		BackgroundColor3: new Color3(0.16, 0.48, 0.89),
 		BackgroundTransparency: 0.2,
 		Children: {
+			// Layout Token
 			Layout: LayoutTokens.Vertical(0.5),
-			TopRow: TopRow(),
+
+			// Top Row
+			TopRow: New("Frame")({
+				Name: "AvatarCardContainer",
+				Size: TopRowSize,
+				BackgroundTransparency: 1,
+				[Children]: {
+					Layout: LayoutTokens.Horizontal(0.5),
+					AvatarCard: AvatarCard({
+						Size: UDim2.fromOffset(90, 90),
+					}),
+					ResourceBarContainer: ResourceContainer(),
+				},
+			}),
+
+			// Bottom Row
+			BottomRow: BottomRow(),
 		},
 	});
 	return container;

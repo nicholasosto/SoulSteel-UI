@@ -67,4 +67,12 @@ export const IconAssets = {
 
 export const Frames = {
 	MenuButton: "rbxassetid://98254772605981",
+	Fillbar: "rbxassetid://108018297611555", // Example asset ID for fillbar frame
+};
+
+export const Textures = {
+	BoneDoily: "rbxassetid://95630930335402", // Example texture ID
+	PanelBackground: "rbxassetid://104986974095443", // Replace with actual texture ID
+	Marble_Light: "rbxassetid://123023012566073", // Example texture ID
+	Mystical: "rbxassetid://73987241775051", // Example texture ID
 };

@@ -7,13 +7,15 @@ const { New, Children, Computed, Value, OnEvent } = Fusion;
 export interface MenuButtonProps {
 	Name: string;
 	Icon: string;
-	SelectedState: Fusion.Value<boolean>;
 	Size?: UDim2;
 	LayoutOrder?: number;
+	OnClick?: () => void;
+	SelectedState?: Fusion.Value<boolean>;
 }
 
 export const MenuButton = (props: MenuButtonProps) => {
 	const isHovered = Value(false);
+	const isSelected = props.SelectedState ?? Value(false);
 
 	const MenuButton = New("ImageButton")({
 		Name: props.Name,
@@ -23,7 +25,10 @@ export const MenuButton = (props: MenuButtonProps) => {
 		LayoutOrder: props.LayoutOrder ?? 0,
 		[OnEvent("Activated")]: () => {
 			print(`MenuButton ${props.Name} activated`);
-			props.SelectedState.set(props.SelectedState.get() === false);
+			isSelected.set(isSelected.get() === false);
+			if (props.OnClick) {
+				props.OnClick();
+			}
 		},
 		[Children]: {
 			Icon: New("ImageLabel")({
@@ -43,7 +48,7 @@ export const MenuButton = (props: MenuButtonProps) => {
 		Active: true,
 		[Children]: {
 			Gradient: Computed(() => {
-				if (props.SelectedState.get()) {
+				if (isSelected.get()) {
 					GradientTokens.SelectedGradient();
 				} else if (isHovered.get()) {
 					return GradientTokens.HoverGradient();

@@ -25,3 +25,4 @@ export * from "./BaseFrame";
 export * from "./buttons";
 export * from "./assets";
 export * from "./lists/List";
+export * from "./fillbar";

@@ -21,7 +21,7 @@
  */
 
 import Fusion, { Children, Computed, Value } from "@rbxts/fusion";
-import { createFusionResource, FusionResource } from "../states/Helpers/FusionResource";
+import { createFusionResource, FusionResource } from "shared/FusionUI/states/Helpers/FusionResource";
 
 const HealthResource = createFusionResource(1, 100, new Color3(0.8, 0.1, 0.1));
 const SoulPowerResource = createFusionResource(50, 100, new Color3(0.1, 0.1, 0.8));
@@ -32,7 +32,7 @@ export interface ResourceBarProps {
 }
 export const ResourceBar = (props: ResourceBarProps) => {
 	const { FusionResource } = props;
-	const Height = Value(30); // Height of the resource bar
+	const Height = Value(25); // Height of the resource bar
 
 	const container = Fusion.New("Frame")({
 		Name: "ResourceBar",

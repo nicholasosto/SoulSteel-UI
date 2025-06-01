@@ -17,29 +17,33 @@ const MenuButtonSize = UDim2.fromOffset(50, 50);
 interface MenuBarProps {
 	Size: UDim2;
 	Position: UDim2;
+	OnMenuButtonClick?: (buttonName: string) => void;
+}
+
+function OnMenuButtonClick(buttonName: string) {
+	print(`Menu button ${buttonName} clicked`);
+	// Handle button click logic here, e.g. open corresponding panel
 }
 
 /** Horizontal menu with common panel buttons. */
 export const MenuBar = (props: MenuBarProps) => {
+
 	const buttons = [
 		MenuButton({
 			Name: "CharacterPanel",
 			Icon: IconAssets.MenuPanel.CharacterPanel,
-			SelectedState: Value(false),
 			LayoutOrder: 1,
 			Size: MenuButtonSize,
 		}),
 		MenuButton({
 			Name: "FriendsPanel",
 			Icon: IconAssets.MenuPanel.TeleportPanel,
-			SelectedState: Value(false),
 			LayoutOrder: 1,
 			Size: MenuButtonSize,
 		}),
 		MenuButton({
 			Name: "TeleportPanel",
 			Icon: IconAssets.MenuPanel.FriendsPanel,
-			SelectedState: Value(false),
 			LayoutOrder: 1,
 			Size: MenuButtonSize,
 		}),

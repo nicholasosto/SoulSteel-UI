@@ -33,8 +33,8 @@ export const ActionBar = (props?: ActionBarProps) => {
 	return BaseFrame({
 		Name: "ActionBar",
 		Size: new UDim2(0, count * 60, 0, 60),
-		AnchorPoint: new Vector2(0.5, 0.5),
-		Position: UDim2.fromScale(0.5, 0.5),
+		AnchorPoint: new Vector2(0.5, 0),
+		Position: new UDim2(0.5, 0, 1, -60), // Positioned at the bottom centre
 		Children: [Lists.HorizontalList(slots)],
 	});
 };
