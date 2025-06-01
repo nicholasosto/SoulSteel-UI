@@ -7,8 +7,10 @@
  * @description Row of buttons for opening HUD panels.
  */
 
+import { PlayerCurrencyState } from "shared/FusionUI/states";
 import { BaseFrame, IconButton, IconAssets, Lists } from "../../atoms";
 import { MenuButton } from "shared/FusionUI/molecules/MenuButton";
+import { MenuPanelState } from "shared/FusionUI/states/MenuPanelState";
 
 /* Organism Constants */
 const MenuButtonSize = UDim2.fromOffset(50, 50);
@@ -26,6 +28,20 @@ export const MenuBar = (props: MenuBarProps) => {
 			Icon: IconAssets.MenuPanel.CharacterPanel,
 			LayoutOrder: 1,
 			Size: MenuButtonSize,
+			OnClick: () => {
+				PlayerCurrencyState.Coins.set(PlayerCurrencyState.Coins.get() + 10); // Example action
+				MenuPanelState.SelectedPanel.set("CharacterPanel");
+			},
+		}),
+		MenuButton({
+			Name: "EquipmentPanel",
+			Icon: IconAssets.MenuPanel.CharacterPanel,
+			LayoutOrder: 1,
+			Size: MenuButtonSize,
+			OnClick: () => {
+				PlayerCurrencyState.Coins.set(PlayerCurrencyState.Coins.get() + 10); // Example action
+				MenuPanelState.SelectedPanel.set("EquipmentPanel");
+			},
 		}),
 		MenuButton({
 			Name: "FriendsPanel",

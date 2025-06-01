@@ -14,15 +14,7 @@
 
 import Fusion from "@rbxts/fusion";
 import { Players } from "@rbxts/services";
-import {
-	ActionBar,
-	CharacterCard,
-	EquipmentPanel,
-	MenuBar,
-	CurrencyCard,
-	FillBarBase,
-	FillBarBaseProps,
-} from "shared/FusionUI";
+import { ActionBar, CharacterCard, MenuBar, CurrencyCard, FillBarBase, FillBarBaseProps } from "shared/FusionUI";
 
 const { New, Children } = Fusion;
 
@@ -43,14 +35,9 @@ const MenuBarSP = {
 	Position: UDim2.fromOffset(Padding, CharacterCardSP.Size.Y.Offset + Padding),
 };
 
-// FillBarBaseProps
-const fillBarBaseProps: FillBarBaseProps = {
-	Current: Fusion.Value(50), // Example current value
-	Max: Fusion.Value(100), // Example max value
-};
 /** Player HUD screen mounted under the local PlayerGui. */
-export const PlayerHUD = () =>
-	New("ScreenGui")({
+export const PlayerHUD = () => {
+	const PlayerHud = New("ScreenGui")({
 		Name: "PlayerHUD",
 		Parent: Players.LocalPlayer.WaitForChild("PlayerGui") as PlayerGui,
 		ResetOnSpawn: false,
@@ -61,6 +48,7 @@ export const PlayerHUD = () =>
 			MenuBar: MenuBar(MenuBarSP),
 			ActionBar: ActionBar({ SlotCount: 5 }),
 			CurrencyCard: CurrencyCard(),
-			FillBarTest: FillBarBase(fillBarBaseProps),
 		},
 	});
+	return PlayerHud;
+};

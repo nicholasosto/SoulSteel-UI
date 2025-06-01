@@ -57,7 +57,7 @@ const Accessory2Props: SlotButtonProps = {
 	},
 };
 
-export const EquipmentPanel = () => {
+export const EquipmentWindow = () => {
 	const children = [
 		SlotButton(HelmetProps),
 		SlotButton(ChestplateProps),

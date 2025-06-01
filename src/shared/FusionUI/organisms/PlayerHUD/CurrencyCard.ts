@@ -9,13 +9,14 @@
 
 import Fusion from "@rbxts/fusion";
 import { BaseFrame, IconAssets } from "../../atoms";
+import { PlayerCurrencyState } from "shared/FusionUI/states";
 
 const { New, Children, Value, Computed } = Fusion;
 
 /** Small panel showing coins and gems. */
 export const CurrencyCard = () => {
-	const coins = Value(0);
-	const gems = Value(0);
+	const coins = PlayerCurrencyState.Coins;
+	const gems = PlayerCurrencyState.Gems;
 
 	return BaseFrame({
 		Name: "CurrencyCard",

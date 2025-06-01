@@ -2,5 +2,5 @@
 export * from "./PlayerHUD/CharacterCard";
 export * from "./PlayerHUD/MenuBar";
 export * from "./PlayerHUD/CurrencyCard";
-export * from "./Panels/EquipmentPanel";
+export * from "./Panels";
 export * from "./PlayerHUD/ActionBar";
