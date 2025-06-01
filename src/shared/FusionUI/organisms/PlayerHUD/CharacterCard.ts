@@ -7,7 +7,7 @@
  * @description Displays the player's avatar, level and health information.
  */
 
-import Fusion from "@rbxts/fusion";
+import Fusion, { Children, New } from "@rbxts/fusion";
 import { AvatarCard, BaseFrame } from "shared/FusionUI/atoms";
 import { ResourceBar } from "shared/FusionUI/atoms/fillbar";
 import { PlayerInfoState } from "shared/FusionUI/states/PlayerInfo";
@@ -16,18 +16,11 @@ import { PlayerResources } from "shared/FusionUI/states";
 
 const { Value, Computed } = Fusion;
 
-/* Organism Constants */
-const CardSize = UDim2.fromOffset(300, 150);
-const TopContainerSize = UDim2.fromOffset(300, 120);
-const AvatarSize = new UDim2(0, 90, 0, 90);
-const ResourceContainerSize = new UDim2(1, -65, 1, -30);
-const BottomContainerSize = UDim2.fromOffset(300, 30);
-
 // Resource Container
 const ResourceContainer = () => {
 	const container = BaseFrame({
 		Name: "ResourceContainer",
-		Size: ResourceContainerSize,
+		Size: UDim2.fromScale(0.8, 1),
 		LayoutOrder: 2,
 		Children: {
 			Layout: LayoutTokens.Vertical(2),
@@ -46,50 +39,57 @@ const ResourceContainer = () => {
 	return container;
 };
 
-// Top Container: Avatar and Resource Bar Container
-const TopContainer = () => {
-	return BaseFrame({
-		Name: "TopContainer",
-		Size: TopContainerSize,
-		LayoutOrder: 1,
-		Children: {
-			Layout: LayoutTokens.Horizontal(0),
-			Avatar: AvatarCard({
+interface AvatarCardProps {
+	ResourceBarContainer?: Fusion.Value<Frame>;
+	AvatarCard?: Fusion.Value<Frame>;
+}
+
+//#TODO - Fix this
+const AvatarCard3 = (props: AvatarCardProps) => {
+	const avatarCard = New("Frame")({
+		Name: "AvatarCardContainer",
+		Size: UDim2.fromScale(1, 1),
+		Position: UDim2.fromScale(0, 0),
+		BackgroundTransparency: 1,
+		[Children]: {
+			AvatarCard: New("ImageLabel")({
 				Name: "AvatarCard",
-				Size: AvatarSize,
+				Size: UDim2.fromScale(1, 0.6),
 			}),
-			ResourceBarContainer: ResourceContainer(),
+			ResourceBarContainer: New("Frame")({
+				Name: "ResourceBarContainer",
+				Size: UDim2.fromScale(1, 0.4),
+				Position: UDim2.fromScale(0, 0.6),
+				BackgroundTransparency: 1,
+				[Children]: {
+					ResourceContainer: ResourceContainer(),
+				},
+			}),
 		},
 	});
-};
-
-// Bottom Container: Level Gem and Player Info
-const BottomContainer = () => {
-	return BaseFrame({
-		Name: "BottomContainer",
-		Size: BottomContainerSize,
-		LayoutOrder: 2,
-		Children: {},
-	});
+	return avatarCard;
 };
 
 /**
  * Character Card Component
  * Main Container for displaying player avatar, level, and resources (health, soulpower, stamina) information.
  */
+interface CharacterCardProps {
+	Size: UDim2;
+	Position: UDim2;
+}
 
-export const CharacterCard = () => {
+export const CharacterCard = (props: CharacterCardProps) => {
 	const container = BaseFrame({
 		Name: "CharacterCard",
-		Size: CardSize,
+		Size: props.Size,
 		AnchorPoint: new Vector2(0, 0),
-		Position: new UDim2(0, 20, 0, 20),
+		Position: props.Position,
 		BackgroundColor3: new Color3(0.16, 0.48, 0.89),
 		BackgroundTransparency: 0.2,
 		Children: {
 			Layout: LayoutTokens.Vertical(0.5),
-			TopContainer: TopContainer(),
-			BottomContainer: BottomContainer(),
+			TopContainer: AvatarCard3({}),
 		},
 	});
 	return container;

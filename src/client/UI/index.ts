@@ -1,1 +1,1 @@
-export * from "./PlayerHUD";
+export * from "../../shared/FusionUI/screens/PlayerHUD";

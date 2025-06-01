@@ -20,5 +20,5 @@
  *   @rbxts/fusion ^0.4.0
  */
 
-export * from "./icon";
+export * from "./images";
 // export * from "./slices";

@@ -23,5 +23,5 @@
 export * from "./Avatar";
 export * from "./BaseFrame";
 export * from "./buttons";
-export * from "./images";
+export * from "./assets";
 export * from "./lists/List";

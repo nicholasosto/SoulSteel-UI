@@ -7,7 +7,7 @@
 /* Imports ========================================= */
 import Fusion from "@rbxts/fusion";
 import { Players } from "@rbxts/services";
-import { PlayerHUD } from "./UI/PlayerHUD";
+import { PlayerHUD } from "shared/FusionUI/screens/PlayerHUD";
 
 /* Screens ========================================= */
 PlayerHUD();

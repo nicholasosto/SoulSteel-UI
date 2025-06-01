@@ -7,37 +7,49 @@
  * @description Row of buttons for opening HUD panels.
  */
 
-import Fusion from "@rbxts/fusion";
+import Fusion, { Value } from "@rbxts/fusion";
 import { BaseFrame, IconButton, IconAssets, Lists } from "../../atoms";
+import { MenuButton } from "shared/FusionUI/molecules/MenuButton";
+
+/* Organism Constants */
+const MenuButtonSize = UDim2.fromOffset(50, 50);
+
+interface MenuBarProps {
+	Size: UDim2;
+	Position: UDim2;
+}
 
 /** Horizontal menu with common panel buttons. */
-export const MenuBar = () => {
+export const MenuBar = (props: MenuBarProps) => {
 	const buttons = [
-		IconButton({
+		MenuButton({
 			Name: "CharacterPanel",
 			Icon: IconAssets.MenuPanel.CharacterPanel,
-			OnClick: () => print("Character panel"),
-			Size: UDim2.fromOffset(40, 40),
+			SelectedState: Value(false),
+			LayoutOrder: 1,
+			Size: MenuButtonSize,
 		}),
-		IconButton({
-			Name: "EquipmentPanel",
-			Icon: IconAssets.MenuPanel.EquipmentPanel,
-			OnClick: () => print("Equipment panel"),
-			Size: UDim2.fromOffset(40, 40),
+		MenuButton({
+			Name: "FriendsPanel",
+			Icon: IconAssets.MenuPanel.CharacterPanel,
+			SelectedState: Value(false),
+			LayoutOrder: 1,
+			Size: MenuButtonSize,
 		}),
-		IconButton({
-			Name: "SettingsPanel",
-			Icon: IconAssets.MenuPanel.SetttingsPanel,
-			OnClick: () => print("Settings panel"),
-			Size: UDim2.fromOffset(40, 40),
+		MenuButton({
+			Name: "TeleportPanel",
+			Icon: IconAssets.MenuPanel.CharacterPanel,
+			SelectedState: Value(false),
+			LayoutOrder: 1,
+			Size: MenuButtonSize,
 		}),
 	];
 
 	return BaseFrame({
 		Name: "MenuBar",
-		Size: UDim2.fromOffset(180, 50),
-		Position: new UDim2(0.5, 0, 1, -10),
-		AnchorPoint: new Vector2(0.5, 1),
+		Size: props.Size,
+		Position: props.Position,
+		AnchorPoint: new Vector2(0, 0),
 		Children: [Lists.HorizontalList(buttons)],
 	});
 };

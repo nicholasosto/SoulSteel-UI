@@ -64,3 +64,7 @@ export const IconAssets = {
 		Spirit_Circles: "rbxassetid://78703065651895",
 	},
 };
+
+export const Frames = {
+	MenuButton: "rbxassetid://98254772605981",
+};
