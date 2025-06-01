@@ -11,7 +11,7 @@ This markdown file defines conventions and guidelines for agents (human or autom
 | **Atoms**               | Base UI primitives.                                   | `ButtonAtom`, `IconImage`, `GradientFrame` |
 | **Molecules**           | Meaningful combinations of atoms.                     | `LabeledInput`, `CardHeader`, `ToggleRow`  |
 | **Organisms**           | Self-contained functional clusters.                   | `InventoryGrid`, `ModalDialog`, `Tooltip`  |
-| **Pages**               | Complete in‑game views. (Sometimes called *Screens*.) | `EquipmentPage`, `SettingsPage`            |
+| **Screens**               | Complete in‑game views. (Sometimes called *Pages*.) | `EquipmentPage`, `SettingsPage`            |
 | **Templates / Layouts** | Structural wrappers reused across pages.              | `StackColumn`, `FlowRow`, `SafeAreaFrame`  |
 
 > **State helpers:** We rely on Fusion’s reactive primitives: `Value`, `Computed`, `Observer`, `ForPairs`, `ForKeys`. When mentioning them below we always import from `@rbxts/fusion`.
