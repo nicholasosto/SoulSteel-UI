@@ -27,7 +27,6 @@ function OnMenuButtonClick(buttonName: string) {
 
 /** Horizontal menu with common panel buttons. */
 export const MenuBar = (props: MenuBarProps) => {
-
 	const buttons = [
 		MenuButton({
 			Name: "CharacterPanel",

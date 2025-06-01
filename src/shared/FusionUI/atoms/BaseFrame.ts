@@ -51,8 +51,8 @@ export interface BaseFrameProps {
 }
 
 /** Simple frame with corner and gradient tokens. */
-export const BaseFrame = (props: BaseFrameProps) =>
-	New("Frame")({
+export const BaseFrame = (props: BaseFrameProps) => {
+	const component = New("Frame")({
 		Name: props.Name ?? "BaseFrame",
 		Size: props.Size ?? Defaults.Size,
 		Position: props.Position ?? Defaults.Position,
@@ -66,3 +66,6 @@ export const BaseFrame = (props: BaseFrameProps) =>
 			Content: props.Children,
 		},
 	});
+
+	return component;
+};

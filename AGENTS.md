@@ -50,6 +50,8 @@ When adding a new UI component, provide:
 * Screenshot in PR description.
 * Docs block (`/** @component ... */`).
 
+For more specific Fusion patterns, see `src/FusionUI/AGENTS.md`.
+
 ---
 
 ## 4  Testing & Quality Gates
