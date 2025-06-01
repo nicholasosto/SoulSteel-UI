@@ -7,10 +7,8 @@
  * @description Container for the player's ability bar on the HUD.
  */
 
-import Fusion from "@rbxts/fusion";
+import { Value } from "@rbxts/fusion";
 import { BaseFrame, Lists, SlotButton, SlotButtonProps, IconAssets } from "../../atoms";
-
-const { Value } = Fusion;
 export interface ActionBarProps {
 	SlotCount?: number;
 }
