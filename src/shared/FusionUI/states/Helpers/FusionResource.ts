@@ -1,3 +1,17 @@
+/// <reference types="@rbxts/types" />
+
+/**
+ * @file        FusionResource.ts
+ * @module      FusionResource
+ * @layer       State
+ * @description Helper factory for consumable resource slices.
+ *
+ * ╭───────────────────────────────╮
+ * │  Soul Steel · Coding Guide    │
+ * │  Fusion v4 · Strict TS · ECS  │
+ * ╰───────────────────────────────╯
+ */
+
 import { Value, Computed } from "@rbxts/fusion";
 
 /** All data the UI needs for one consumable resource */

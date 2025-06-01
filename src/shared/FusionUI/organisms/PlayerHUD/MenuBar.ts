@@ -7,7 +7,6 @@
  * @description Row of buttons for opening HUD panels.
  */
 
-import Fusion, { Value } from "@rbxts/fusion";
 import { BaseFrame, IconButton, IconAssets, Lists } from "../../atoms";
 import { MenuButton } from "shared/FusionUI/molecules/MenuButton";
 
@@ -17,12 +16,6 @@ const MenuButtonSize = UDim2.fromOffset(50, 50);
 interface MenuBarProps {
 	Size: UDim2;
 	Position: UDim2;
-	OnMenuButtonClick?: (buttonName: string) => void;
-}
-
-function OnMenuButtonClick(buttonName: string) {
-	print(`Menu button ${buttonName} clicked`);
-	// Handle button click logic here, e.g. open corresponding panel
 }
 
 /** Horizontal menu with common panel buttons. */
