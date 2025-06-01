@@ -14,6 +14,7 @@ const { Value } = Fusion;
 export interface ActionBarProps {
 	SlotCount?: number;
 }
+
 /** Action bar positioned at the bottom centre of the screen. */
 export const ActionBar = (props?: ActionBarProps) => {
 	const count = props?.SlotCount ?? 5;

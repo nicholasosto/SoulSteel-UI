@@ -22,17 +22,25 @@ const { New, Children } = Fusion;
 const Padding = 10; // Padding around the screen
 
 /* Organism Sizes and Positions */
+
+// CharacterCard
 const CharacterCardSP = {
 	Size: UDim2.fromOffset(300, 150),
 	Position: UDim2.fromOffset(Padding, Padding),
 };
 
+// MenuBar
 const MenuBarSP = {
-	Size: UDim2.fromOffset(180, 50),
-	Position: UDim2.fromOffset(Padding, CharacterCardSP.Size.Y.Offset + 5),
+	Size: UDim2.fromOffset(300, 50),
+	Position: UDim2.fromOffset(Padding, CharacterCardSP.Size.Y.Offset + Padding),
 };
-// Sizes
-const CardSize = UDim2.fromOffset(300, 150);
+
+// ActionBar
+const ActionBarSP = {
+	Size: UDim2.fromOffset(500, 100),
+	AnchorPoint: new Vector2(0.5, 1),
+	Position: UDim2.fromScale(0.5, 1).sub(new UDim2(0, 0, 0, Padding)),
+};
 
 /** Player HUD screen mounted under the local PlayerGui. */
 export const PlayerHUD = () =>
@@ -46,7 +54,7 @@ export const PlayerHUD = () =>
 			CharacterCard: CharacterCard(CharacterCardSP),
 			MenuBar: MenuBar(MenuBarSP),
 			//ActionBar: ActionBar(),
-			//CurrencyCard: CurrencyCard(),
+			CurrencyCard: CurrencyCard(),
 			//EquipmentPanel: EquipmentPanel(),
 		},
 	});

@@ -22,6 +22,7 @@ export const MenuButton = (props: MenuButtonProps) => {
 		Image: Frames.MenuButton,
 		LayoutOrder: props.LayoutOrder ?? 0,
 		[OnEvent("Activated")]: () => {
+			print(`MenuButton ${props.Name} activated`);
 			props.SelectedState.set(props.SelectedState.get() === false);
 		},
 		[Children]: {
@@ -42,14 +43,17 @@ export const MenuButton = (props: MenuButtonProps) => {
 		Active: true,
 		[Children]: {
 			Gradient: Computed(() => {
-				if (props.SelectedState.get() || isHovered.get()) {
+				if (props.SelectedState.get()) {
 					GradientTokens.SelectedGradient();
+				} else if (isHovered.get()) {
+					return GradientTokens.HoverGradient();
 				}
 				return GradientTokens.DarkGradient();
 			}),
 			MenuButton: MenuButton,
 		},
 		[OnEvent("MouseEnter")]: () => {
+			print(`MenuButton ${props.Name} hovered`);
 			isHovered.set(true);
 		},
 		[OnEvent("MouseLeave")]: () => {

@@ -16,11 +16,15 @@ import { PlayerResources } from "shared/FusionUI/states";
 
 const { Value, Computed } = Fusion;
 
+// Constants
+const TopRowSize = new UDim2(1, 0, 0, 120);
+const BottomRowSize = new UDim2(1, 0, 0, 40);
+
 // Resource Container
 const ResourceContainer = () => {
 	const container = BaseFrame({
 		Name: "ResourceContainer",
-		Size: UDim2.fromScale(0.8, 1),
+		Size: new UDim2(1, -95, 1, 0),
 		LayoutOrder: 2,
 		Children: {
 			Layout: LayoutTokens.Vertical(2),
@@ -39,32 +43,17 @@ const ResourceContainer = () => {
 	return container;
 };
 
-interface AvatarCardProps {
-	ResourceBarContainer?: Fusion.Value<Frame>;
-	AvatarCard?: Fusion.Value<Frame>;
-}
-
-//#TODO - Fix this
-const AvatarCard3 = (props: AvatarCardProps) => {
+const TopRow = () => {
 	const avatarCard = New("Frame")({
 		Name: "AvatarCardContainer",
-		Size: UDim2.fromScale(1, 1),
-		Position: UDim2.fromScale(0, 0),
+		Size: TopRowSize,
 		BackgroundTransparency: 1,
 		[Children]: {
-			AvatarCard: New("ImageLabel")({
-				Name: "AvatarCard",
-				Size: UDim2.fromScale(1, 0.6),
+			Layout: LayoutTokens.Horizontal(0.5),
+			AvatarCard: AvatarCard({
+				Size: UDim2.fromOffset(90, 90),
 			}),
-			ResourceBarContainer: New("Frame")({
-				Name: "ResourceBarContainer",
-				Size: UDim2.fromScale(1, 0.4),
-				Position: UDim2.fromScale(0, 0.6),
-				BackgroundTransparency: 1,
-				[Children]: {
-					ResourceContainer: ResourceContainer(),
-				},
-			}),
+			ResourceBarContainer: ResourceContainer(),
 		},
 	});
 	return avatarCard;
@@ -89,7 +78,7 @@ export const CharacterCard = (props: CharacterCardProps) => {
 		BackgroundTransparency: 0.2,
 		Children: {
 			Layout: LayoutTokens.Vertical(0.5),
-			TopContainer: AvatarCard3({}),
+			TopRow: TopRow(),
 		},
 	});
 	return container;

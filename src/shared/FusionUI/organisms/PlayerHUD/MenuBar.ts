@@ -31,14 +31,14 @@ export const MenuBar = (props: MenuBarProps) => {
 		}),
 		MenuButton({
 			Name: "FriendsPanel",
-			Icon: IconAssets.MenuPanel.CharacterPanel,
+			Icon: IconAssets.MenuPanel.TeleportPanel,
 			SelectedState: Value(false),
 			LayoutOrder: 1,
 			Size: MenuButtonSize,
 		}),
 		MenuButton({
 			Name: "TeleportPanel",
-			Icon: IconAssets.MenuPanel.CharacterPanel,
+			Icon: IconAssets.MenuPanel.FriendsPanel,
 			SelectedState: Value(false),
 			LayoutOrder: 1,
 			Size: MenuButtonSize,
