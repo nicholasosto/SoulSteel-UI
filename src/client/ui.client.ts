@@ -10,8 +10,10 @@ import { Players } from "@rbxts/services";
 import { EquipmentPanel } from "shared/FusionUI/screens/EquipmentPanel";
 import { PlayerHUD } from "shared/FusionUI/screens/PlayerHUD";
 import { TestScreen } from "shared/FusionUI/screens/TestScreen";
+import { WeaponUpgradeScreen } from "shared/FusionUI/screens/WeaponUpgradeScreen";
 
 /* Screens ========================================= */
 PlayerHUD();
 EquipmentPanel();
 TestScreen();
+WeaponUpgradeScreen();
