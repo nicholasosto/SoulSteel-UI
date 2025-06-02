@@ -15,6 +15,7 @@
   "devDependencies": {
     "@rbxts/compiler-types": "^3.0.0-types.0",
     "@rbxts/fusion": "^0.2.0",
+    "@rbxts/maid": "^1.1.0",
     "@rbxts/net": "^3.0.10",
     "@rbxts/services": "^1.5.5",
     "@rbxts/types": "^1.0.854",

@@ -23,3 +23,4 @@
 export * from "./BasicButton";
 export * from "./IconButton";
 export * from "./SlotButton";
+export * from "./HoldButton";
