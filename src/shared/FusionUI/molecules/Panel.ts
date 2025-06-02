@@ -11,7 +11,7 @@ export interface PanelProps {
 	AnchorPoint?: Vector2;
 	Title?: string;
 	OnClose?: () => void;
-	[Children]?: Instance[] | Instance;
+	[Children]?: Instance | Instance[] | { [key: string]: Instance | Fusion.Value<Instance> };
 }
 
 /** Basic panel with title bar and close button. */

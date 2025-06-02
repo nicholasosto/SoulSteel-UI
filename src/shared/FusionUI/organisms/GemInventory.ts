@@ -40,7 +40,7 @@ export const GemInventory = (props: GemInventoryProps) => {
 		AutomaticCanvasSize: Enum.AutomaticSize.Y,
 		[Children]: {
 			Layout: LayoutTokens.Grid(),
-			Gems: ForPairs(props.gemIds, (i, gemId) => [i, InventoryGem({ gemId, index: i as number })]),
+			Gems: ForPairs(props.gemIds, (i, gemId) => $tuple(i, InventoryGem({ gemId, index: i as number }))),
 		},
 	});
 };

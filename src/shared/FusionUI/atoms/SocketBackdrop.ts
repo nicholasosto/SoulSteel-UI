@@ -26,7 +26,7 @@ import { CornerToken } from "shared/FusionUI/theme";
 const { New, Children, Computed } = Fusion;
 
 export interface SocketBackdropProps {
-	isHighlighted: Fusion.Value<boolean>;
+	isHighlighted: Fusion.StateObject<boolean>;
 	isEmpty: boolean;
 }
 

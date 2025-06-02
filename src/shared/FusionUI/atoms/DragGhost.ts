@@ -39,8 +39,8 @@ export const DragGhost = () => {
 		}
 	});
 
-	Observer(dragStore, (v) => {
-		if (!v) conn.Disconnect();
+	Observer(dragStore).onChange(() => {
+		if (!dragStore.get()) conn.Disconnect();
 	});
 
 	return New("ImageLabel")({
