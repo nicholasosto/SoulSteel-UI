@@ -1,3 +1,25 @@
+/// <reference types="@rbxts/types" />
+
+/**
+ * @file        Stepper.ts
+ * @module      Stepper
+ * @layer       Molecule
+ * @description Small control with up/down buttons for numeric adjustments.
+ *
+ * ╭───────────────────────────────╮
+ * │  Soul Steel · Coding Guide    │
+ * │  Fusion v4 · Strict TS · ECS  │
+ * ╰───────────────────────────────╯
+ *
+ * @author       Trembus
+ * @license      MIT
+ * @since        0.1.0
+ * @lastUpdated  2025-06-02 by Codex – Added documentation header
+ *
+ * @dependencies
+ *   @rbxts/fusion ^0.4.0
+ */
+
 import { New, Value, Children } from "@rbxts/fusion";
 import { StepButton } from "shared/FusionUI/atoms";
 

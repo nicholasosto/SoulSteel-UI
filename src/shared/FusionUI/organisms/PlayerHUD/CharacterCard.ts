@@ -12,7 +12,6 @@ import { BaseFrame, ResourceBar } from "shared/FusionUI/atoms";
 import { CharacterCardSizes, LayoutTokens } from "shared/FusionUI/theme";
 import { PlayerResources } from "shared/FusionUI/states";
 
-
 const { Value, Computed } = Fusion;
 
 // Constants
