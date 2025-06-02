@@ -2,6 +2,8 @@
 
 This markdown file defines conventions and guidelines for agents (human or automated) working on the Fusion-based UI layer of **Soul Steel**. It is written so that you can both *read* it as documentation and *parse* it programmatically.
 
+IMPORTANT: please review the list of needed Atoms, Molecules, and Organism designs in the [FusionUI/ComponentTracker.md](ComponentTracker.md) file. This document is not a replacement for that list.
+
 ---
 
 ## 1 · Category Taxonomy
