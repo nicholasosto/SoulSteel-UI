@@ -1,1 +1,1 @@
-export * from "./AttributeControls";
+export * from "../AttributeControlPanel";

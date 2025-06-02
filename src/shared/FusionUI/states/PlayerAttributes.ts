@@ -14,7 +14,7 @@
 
 import Fusion from "@rbxts/fusion";
 import { format } from "@rbxts/net/out/internal";
-import { AttributeKey, ATTR_KEYS } from "shared/constants/keys";
+import { AttributeKey, ATTR_KEYS } from "shared/keys";
 import { AttributesDTO } from "shared/DTO/AttributesDTO";
 
 export type AttributeState = Record<AttributeKey, Fusion.Value<number>>;
@@ -38,4 +38,5 @@ export const PlayerAttributes = makeAttributeState({
 	agi: 2,
 	vit: 3,
 	int: 4,
+	lck: 5,
 } as AttributesDTO);

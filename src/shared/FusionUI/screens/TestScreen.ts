@@ -2,7 +2,7 @@
 
 import Fusion from "@rbxts/fusion";
 import { HoldButton } from "../atoms";
-import { AttributeControls } from "../organisms";
+import { AttributeControlPanel } from "../organisms";
 const { New, Children } = Fusion;
 
 const HoldButtonTest = HoldButton({
@@ -43,7 +43,7 @@ export const TestScreen = () => {
 		ZIndexBehavior: Enum.ZIndexBehavior.Global,
 		[Children]: {
 			HoldButtonTest,
-			FrameContainer: AttributeControls(),
+			//FrameContainer:
 		},
 	});
 };

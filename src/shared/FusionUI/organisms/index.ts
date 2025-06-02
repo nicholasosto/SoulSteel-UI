@@ -1,4 +1,5 @@
 // Place organism components here as the system grows.
+export * from "./AttributeControlPanel";
 export * from "./PlayerHUD/CharacterCard";
 export * from "./PlayerHUD/MenuBar";
 export * from "./PlayerHUD/CurrencyCard";
