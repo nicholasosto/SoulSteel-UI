@@ -8,9 +8,10 @@
  */
 
 import { PlayerCurrencyState } from "shared/FusionUI/states";
-import { BaseFrame, IconButton, IconAssets, Lists } from "../../atoms";
+import { BaseFrame, IconButton, Lists } from "../../atoms";
 import { MenuButton } from "shared/FusionUI/molecules/MenuButton";
 import { MenuPanelState } from "shared/FusionUI/states/MenuPanelState";
+import { MenuButtonIcon } from "shared/assets/images/buttons";
 
 /* Organism Constants */
 const MenuButtonSize = UDim2.fromOffset(50, 50);
@@ -25,7 +26,7 @@ export const MenuBar = (props: MenuBarProps) => {
 	const buttons = [
 		MenuButton({
 			Name: "CharacterPanel",
-			Icon: IconAssets.MenuPanel.CharacterPanel,
+			Icon: MenuButtonIcon["CharacterPanel"],
 			LayoutOrder: 1,
 			Size: MenuButtonSize,
 			OnClick: () => {
@@ -35,7 +36,7 @@ export const MenuBar = (props: MenuBarProps) => {
 		}),
 		MenuButton({
 			Name: "EquipmentPanel",
-			Icon: IconAssets.MenuPanel.CharacterPanel,
+			Icon: MenuButtonIcon["CharacterPanel"],
 			LayoutOrder: 1,
 			Size: MenuButtonSize,
 			OnClick: () => {
@@ -45,13 +46,13 @@ export const MenuBar = (props: MenuBarProps) => {
 		}),
 		MenuButton({
 			Name: "FriendsPanel",
-			Icon: IconAssets.MenuPanel.TeleportPanel,
+			Icon: MenuButtonIcon["CharacterPanel"],
 			LayoutOrder: 1,
 			Size: MenuButtonSize,
 		}),
 		MenuButton({
 			Name: "TeleportPanel",
-			Icon: IconAssets.MenuPanel.FriendsPanel,
+			Icon: MenuButtonIcon["CharacterPanel"],
 			LayoutOrder: 1,
 			Size: MenuButtonSize,
 		}),

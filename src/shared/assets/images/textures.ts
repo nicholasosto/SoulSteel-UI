@@ -1,10 +1,10 @@
 /// <reference types="@rbxts/types" />
 
 /**
- * @file        index.ts
- * @module      imageAtoms
+ * @file        textures.ts
+ * @module      TextureImage
  * @layer       Atom
- * @description Barrel exports for image atom assets.
+ * @description Mapping of Texture image Ids
  *
  * ╭───────────────────────────────╮
  * │  Soul Steel · Coding Guide    │
@@ -13,13 +13,14 @@
  *
  * @author       Trembus
  * @license      MIT
- * @since        0.1.0
- * @lastUpdated  2025-05-29 by Codex – Header update
+ * @since        0.2.0
+ * @lastUpdated  2025-05-29 by Codex – Initial creation
  *
  * @dependencies
  *   @rbxts/fusion ^0.4.0
  */
 
-export * from "./images";
-export * from "./gems";
-// export * from "./slices";
+export const TextureImage: Record<string, string> = {
+	BoneDoily: "rbxassetid://108018297611555",
+	Mystical: "rbxassetid://108018297611556",
+};

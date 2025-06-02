@@ -1,6 +1,7 @@
 import Fusion, { Children, Computed, New } from "@rbxts/fusion";
 import { CornerToken } from "../theme";
-import { IconAssets, IconButton } from "../atoms";
+import { IconButton } from "../atoms";
+import { ControlButtonIcon } from "shared/assets/images/buttons";
 
 const { Value } = Fusion;
 
@@ -36,7 +37,7 @@ export const Panel = (props: PanelProps) => {
 			}),
 			Close: IconButton({
 				Name: "Close",
-				Icon: IconAssets.Controls.Close,
+				Icon: ControlButtonIcon.Close,
 				OnClick: () => {
 					isOpen.set(false);
 					props.OnClose?.();

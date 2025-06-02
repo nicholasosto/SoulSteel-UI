@@ -1,10 +1,10 @@
 /// <reference types="@rbxts/types" />
 
 /**
- * @file        index.ts
- * @module      atoms
+ * @file        gems.ts
+ * @module      GemIcon
  * @layer       Atom
- * @description Barrel exports for atom components.
+ * @description Mapping of gem IDs to image asset IDs.
  *
  * ╭───────────────────────────────╮
  * │  Soul Steel · Coding Guide    │
@@ -13,18 +13,15 @@
  *
  * @author       Trembus
  * @license      MIT
- * @since        0.1.0
- * @lastUpdated  2025-05-29 by Codex – Header update
+ * @since        0.2.0
+ * @lastUpdated  2025-05-29 by Codex – Initial creation
  *
  * @dependencies
  *   @rbxts/fusion ^0.4.0
  */
 
-export * from "./Avatar";
-export * from "./BaseFrame";
-export * from "./GemIcon";
-export * from "./SocketBackdrop";
-export * from "./DragGhost";
-export * from "./buttons";
-export * from "./lists/List";
-export * from "./fillbar";
+export const GemIcons: Record<string, string> = {
+	ruby: "rbxassetid://1234567890",
+	sapphire: "rbxassetid://1234567891",
+	emerald: "rbxassetid://1234567892",
+};

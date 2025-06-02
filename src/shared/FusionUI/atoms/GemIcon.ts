@@ -21,7 +21,7 @@
  */
 
 import Fusion from "@rbxts/fusion";
-import { GemAssets } from "./assets";
+import { GemIcons } from "shared/assets";
 import { CornerToken } from "shared/FusionUI/theme";
 
 const { New, Children, Computed } = Fusion;
@@ -44,7 +44,7 @@ export const GemIcon = (props: GemIconProps) => {
 				Name: "Image",
 				Size: UDim2.fromScale(1, 1),
 				BackgroundTransparency: 1,
-				Image: GemAssets[props.gemId] ?? "",
+				Image: GemIcons[props.gemId] ?? "",
 				ImageTransparency: props.isGhost ? 0.5 : 0,
 			}),
 			Border: New("UIStroke")({

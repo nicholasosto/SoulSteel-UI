@@ -1,10 +1,10 @@
 /// <reference types="@rbxts/types" />
 
 /**
- * @file        gems.ts
- * @module      GemAssets
+ * @file        Abilitys.ts
+ * @module      AbilityIcon
  * @layer       Atom
- * @description Mapping of gem IDs to image asset IDs.
+ * @description Mapping of Ability IDs to image asset IDs.
  *
  * ╭───────────────────────────────╮
  * │  Soul Steel · Coding Guide    │
@@ -20,8 +20,10 @@
  *   @rbxts/fusion ^0.4.0
  */
 
-export const GemAssets: Record<string, string> = {
-	ruby: "rbxassetid://1234567890",
-	sapphire: "rbxassetid://1234567891",
-	emerald: "rbxassetid://1234567892",
+export const SlotImage: Record<string, string> = {
+	Unassigned: "rbxassetid://98384046526938",
+	Helmet: "rbxassetid://98384046526938",
+	Armor: "rbxassetid://98384046526938",
+	Weapon: "rbxassetid://98384046526938",
+	Accessory: "rbxassetid://98384046526938",
 };

@@ -11,8 +11,9 @@
  */
 
 import Fusion, { OnEvent } from "@rbxts/fusion";
-import { IconAssets, Textures } from "../assets";
 import { CornerToken } from "shared/FusionUI/theme";
+import { ControlButtonIcon } from "shared/assets/images/buttons";
+import { TextureImage } from "shared/assets/images/textures";
 const { New, Value, Children } = Fusion;
 
 interface ContainerBaseProps {
@@ -57,7 +58,7 @@ export const ContainerBase = (props: ContainerBaseProps) => {
 						Position: UDim2.fromScale(1, 0),
 						AnchorPoint: new Vector2(0.5, 0.5),
 						BackgroundTransparency: 1,
-						Image: IconAssets.Controls.Close,
+						Image: ControlButtonIcon["Close"],
 						ImageColor3: new Color3(1, 0, 0),
 						[OnEvent("Activated")]: () => {
 							isVisible.set(false); // Hide the container when close button is clicked
@@ -72,7 +73,7 @@ export const ContainerBase = (props: ContainerBaseProps) => {
 		Name: "BackgroundImage",
 		Size: new UDim2(1, 0, 1, 0),
 		BackgroundTransparency: 1,
-		Image: props.BackgroundImage ?? Textures.Mystical,
+		Image: props.BackgroundImage ?? TextureImage["BoneDoily"], // Default texture
 		ImageColor3: new Color3(1, 1, 1),
 		ImageTransparency: 0.2,
 	});

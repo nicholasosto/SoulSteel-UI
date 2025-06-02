@@ -23,7 +23,7 @@
 import Fusion from "@rbxts/fusion";
 import { UserInputService } from "@rbxts/services";
 import { dragStore } from "../states/DragStore";
-import { GemAssets } from "./assets";
+import { GemIcons } from "../../assets";
 import { CornerToken } from "shared/FusionUI/theme";
 
 const { New, Value, Computed, Observer, Children } = Fusion;
@@ -48,7 +48,7 @@ export const DragGhost = () => {
 		Visible: Computed(() => ghostGem.get() !== undefined),
 		Position: pos,
 		Size: UDim2.fromOffset(48, 48),
-		Image: Computed(() => (ghostGem.get() ? GemAssets[ghostGem.get()!] : "")),
+		Image: Computed(() => (ghostGem.get() ? GemIcons[ghostGem.get()!] : "")),
 		BackgroundTransparency: 1,
 		AnchorPoint: new Vector2(0.5, 0.5),
 		ZIndex: 50,

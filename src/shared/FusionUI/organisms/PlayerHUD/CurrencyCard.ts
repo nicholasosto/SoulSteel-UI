@@ -8,7 +8,8 @@
  */
 
 import Fusion from "@rbxts/fusion";
-import { BaseFrame, IconAssets } from "../../atoms";
+import { BaseFrame } from "shared/FusionUI/atoms";
+import { CurrencyIcon } from "shared/assets";
 import { PlayerCurrencyState } from "shared/FusionUI/states";
 
 const { New, Children, Value, Computed } = Fusion;
@@ -25,7 +26,7 @@ export const CurrencyCard = () => {
 		AnchorPoint: new Vector2(0, 1),
 		Children: {
 			CoinIcon: New("ImageLabel")({
-				Image: IconAssets.Currency.SoulCoin,
+				Image: CurrencyIcon["Coin"],
 				Size: UDim2.fromOffset(24, 24),
 				BackgroundTransparency: 1,
 			}),
@@ -37,7 +38,7 @@ export const CurrencyCard = () => {
 				TextColor3: Color3.fromRGB(255, 230, 0),
 			}),
 			GemIcon: New("ImageLabel")({
-				Image: IconAssets.Currency.SoulGem,
+				Image: CurrencyIcon["Gem"],
 				Size: UDim2.fromOffset(24, 24),
 				Position: new UDim2(0, 0, 0, 30),
 				BackgroundTransparency: 1,

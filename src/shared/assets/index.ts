@@ -2,9 +2,9 @@
 
 /**
  * @file        index.ts
- * @module      atoms
+ * @module      imageAtoms
  * @layer       Atom
- * @description Barrel exports for atom components.
+ * @description Barrel exports for image atom assets.
  *
  * ╭───────────────────────────────╮
  * │  Soul Steel · Coding Guide    │
@@ -20,11 +20,9 @@
  *   @rbxts/fusion ^0.4.0
  */
 
-export * from "./Avatar";
-export * from "./BaseFrame";
-export * from "./GemIcon";
-export * from "./SocketBackdrop";
-export * from "./DragGhost";
-export * from "./buttons";
-export * from "./lists/List";
-export * from "./fillbar";
+export * from "./images/gems";
+export * from "./images/ability";
+export * from "./images/slots";
+export * from "./images/currency";
+
+// export * from "./slices";

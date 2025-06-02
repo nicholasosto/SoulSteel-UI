@@ -1,5 +1,4 @@
 import Fusion from "@rbxts/fusion";
-import { Frames } from "../atoms";
 import { GradientTokens } from "../theme";
 
 const { New, Children, Computed, Value, OnEvent } = Fusion;
@@ -21,7 +20,7 @@ export const MenuButton = (props: MenuButtonProps) => {
 		Name: props.Name,
 		Size: props.Size ?? UDim2.fromOffset(50, 50),
 		BackgroundTransparency: 1,
-		Image: Frames.MenuButton,
+		Image: "rbxassetid://79163709624038", // Menubuttonwith hole for gradient
 		LayoutOrder: props.LayoutOrder ?? 0,
 		[OnEvent("Activated")]: () => {
 			print(`MenuButton ${props.Name} activated`);

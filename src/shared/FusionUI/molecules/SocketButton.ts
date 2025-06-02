@@ -21,7 +21,8 @@
  */
 
 import Fusion from "@rbxts/fusion";
-import { GemIcon, SocketBackdrop } from "../atoms";
+import { SocketBackdrop, GemIcon } from "../atoms";
+import { GemIcons } from "shared/assets";
 import { dragStore } from "../states";
 
 const { New, Children, Computed, OnEvent, Value } = Fusion;

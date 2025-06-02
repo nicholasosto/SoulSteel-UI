@@ -21,7 +21,7 @@
  */
 
 import Fusion from "@rbxts/fusion";
-import { GemIcon } from "../atoms";
+import { GemIcon } from "shared/FusionUI/atoms";
 import { dragStore } from "../states";
 
 const { New, Children, OnEvent } = Fusion;

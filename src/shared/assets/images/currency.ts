@@ -1,10 +1,10 @@
 /// <reference types="@rbxts/types" />
 
 /**
- * @file        index.ts
- * @module      atoms
+ * @file        Currencys.ts
+ * @module
  * @layer       Atom
- * @description Barrel exports for atom components.
+ * @description Mapping of Currency IDs to image asset IDs.
  *
  * ╭───────────────────────────────╮
  * │  Soul Steel · Coding Guide    │
@@ -13,18 +13,14 @@
  *
  * @author       Trembus
  * @license      MIT
- * @since        0.1.0
- * @lastUpdated  2025-05-29 by Codex – Header update
+ * @since        0.2.0
+ * @lastUpdated  2025-05-29 by Codex – Initial creation
  *
  * @dependencies
  *   @rbxts/fusion ^0.4.0
  */
 
-export * from "./Avatar";
-export * from "./BaseFrame";
-export * from "./GemIcon";
-export * from "./SocketBackdrop";
-export * from "./DragGhost";
-export * from "./buttons";
-export * from "./lists/List";
-export * from "./fillbar";
+export const CurrencyIcon: Record<string, string> = {
+	SoulCoin: "rbxassetid://72134445537662",
+	SoulGem: "rbxassetid://138996016884607",
+};

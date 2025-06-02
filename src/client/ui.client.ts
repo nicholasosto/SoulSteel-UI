@@ -13,7 +13,7 @@ import { TestScreen } from "shared/FusionUI/screens/TestScreen";
 import { WeaponUpgradeScreen } from "shared/FusionUI/screens/WeaponUpgradeScreen";
 
 /* Screens ========================================= */
-PlayerHUD();
-EquipmentPanel();
+//PlayerHUD();
+//EquipmentPanel();
 TestScreen();
-WeaponUpgradeScreen();
+//WeaponUpgradeScreen();

@@ -45,9 +45,9 @@ export const PlayerHUD = () => {
 		AutoLocalize: false,
 		[Children]: {
 			CharacterCard: CharacterCard(),
-			MenuBar: MenuBar(MenuBarSP),
-			ActionBar: ActionBar({ SlotCount: 5 }),
-			CurrencyCard: CurrencyCard(),
+			//MenuBar: MenuBar(MenuBarSP),
+			//ActionBar: ActionBar({ SlotCount: 5 }),
+			//CurrencyCard: CurrencyCard(),
 		},
 	});
 	return PlayerHud;

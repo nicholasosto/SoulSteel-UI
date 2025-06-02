@@ -21,7 +21,7 @@
  */
 
 import Fusion from "@rbxts/fusion";
-import { Frames, Textures } from "../assets";
+import { TextureImage } from "shared/assets/images/textures";
 
 const { New, Children, Computed } = Fusion;
 
@@ -65,7 +65,7 @@ export function FillBarBase(props: FillBarBaseProps) {
 						Name: "FillImage",
 						Size: Computed(() => UDim2.fromScale(Current.get() / Max.get(), 1)),
 						BackgroundTransparency: 1,
-						Image: Textures.BoneDoily, // Replace with actual asset ID
+						Image: TextureImage["BoneDoily"],
 						ImageColor3: new Color3(0.1, 0.8, 0.1), // Green fill color
 						ImageTransparency: 0.2,
 						ZIndex: 2,
@@ -74,7 +74,7 @@ export function FillBarBase(props: FillBarBaseProps) {
 						Name: "FillBackground",
 						Size: UDim2.fromScale(1, 1),
 						BackgroundTransparency: 1,
-						Image: Textures.Mystical,
+						Image: TextureImage["Mystical"],
 						ImageColor3: new Color3(0.2, 0.2, 0.2), // Dark background color
 						ZIndex: 1,
 					}),
