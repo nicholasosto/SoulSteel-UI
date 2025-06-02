@@ -21,4 +21,5 @@
  */
 
 export * from "./images";
+export * from "./gems";
 // export * from "./slices";
