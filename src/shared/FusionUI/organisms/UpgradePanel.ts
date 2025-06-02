@@ -21,7 +21,6 @@
  */
 
 import Fusion from "@rbxts/fusion";
-import { Panel } from "../molecules";
 import { SocketGrid } from "./SocketGrid";
 import { GemInventory } from "./GemInventory";
 
@@ -35,9 +34,9 @@ export interface UpgradePanelProps {
 
 /** Panel with weapon info and upgrade controls. */
 export const UpgradePanel = (props: UpgradePanelProps) => {
-	return Panel({
+	return New("Frame")({
 		Name: "UpgradePanel",
-		Title: `Upgrade ${props.selectedWeapon}`,
+		//Title: `Upgrade ${props.selectedWeapon}`,
 		Size: new UDim2(0, 500, 0, 400),
 		[Children]: {
 			WeaponArt: New("Frame")({

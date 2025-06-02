@@ -1,10 +1,8 @@
+//#CODEX please Add header and comments
+
 import Fusion from "@rbxts/fusion";
 import { HoldButton } from "../atoms";
-import { FrameContainer } from "../atoms/containers/FrameContainer";
-import { LayoutTokens } from "../theme";
-import { MenuButton } from "../molecules/MenuButton";
-import { MenuButtonIcon } from "shared/assets/images/buttons";
-import { ScrollContainer } from "../atoms/lists/ScrollingList";
+import { AttributeControls } from "../organisms";
 const { New, Children } = Fusion;
 
 const HoldButtonTest = HoldButton({
@@ -45,24 +43,7 @@ export const TestScreen = () => {
 		ZIndexBehavior: Enum.ZIndexBehavior.Global,
 		[Children]: {
 			HoldButtonTest,
-			FrameContainer: FrameContainer({
-				Size: new UDim2(0.5, 0, 0.5, 0),
-				Position: new UDim2(0.25, 0, 0.25, 0),
-				Children: {
-					
-					Layout: LayoutTokens.Vertical(),
-					MenuButton: MenuButton({
-						Name: "TestMenuButton",
-						Icon: MenuButtonIcon["Character"],
-					}),
-				},
-			}),
-			ScrollingList: ScrollContainer({
-				Type: "Vertical",
-				Size: new UDim2(0.5, 0, 0.5, 0),
-				Position: new UDim2(0.25, 0, 0.75, 0),
-				Children: clonedFrames,
-			}),
+			FrameContainer: AttributeControls(),
 		},
 	});
 };

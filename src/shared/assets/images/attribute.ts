@@ -20,7 +20,7 @@
  *   @rbxts/fusion ^0.4.0
  */
 
-export const AttributeIcon: Record<string, string> = {
+export const AttributeAssetId: Record<string, string> = {
 	Strength: "rbxassetid://127745571044516",
 	Dexterity: "rbxassetid://73893872719367",
 	Intelligence: "rbxassetid://107600003376684",

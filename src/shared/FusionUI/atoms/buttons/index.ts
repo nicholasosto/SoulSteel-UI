@@ -21,6 +21,7 @@
  */
 
 export * from "./BasicButton";
+export * from "./HoldButton";
 export * from "./IconButton";
 export * from "./SlotButton";
-export * from "./HoldButton";
+export * from "./StepButton";

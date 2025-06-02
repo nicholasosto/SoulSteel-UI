@@ -1,5 +1,5 @@
 import Fusion from "@rbxts/fusion";
-import { GradientTokens } from "../theme";
+import { GradientTokens } from "../../theme";
 
 const { New, Children, Computed, Value, OnEvent } = Fusion;
 

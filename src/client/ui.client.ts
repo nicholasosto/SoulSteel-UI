@@ -7,10 +7,7 @@
 /* Imports ========================================= */
 import Fusion from "@rbxts/fusion";
 import { Players } from "@rbxts/services";
-import { EquipmentPanel } from "shared/FusionUI/screens/EquipmentPanel";
-import { PlayerHUD } from "shared/FusionUI/screens/PlayerHUD";
-import { TestScreen } from "shared/FusionUI/screens/TestScreen";
-import { WeaponUpgradeScreen } from "shared/FusionUI/screens/WeaponUpgradeScreen";
+import { EquipmentPanel, PlayerHUD, TestScreen, WeaponUpgradeScreen } from "shared/FusionUI/screens";
 
 /* Screens ========================================= */
 //PlayerHUD();

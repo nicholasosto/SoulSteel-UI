@@ -6,3 +6,4 @@ export * from "./PlayerHUD/ActionBar";
 export * from "./SocketGrid";
 export * from "./GemInventory";
 export * from "./UpgradePanel";
+export * from "./groupings";

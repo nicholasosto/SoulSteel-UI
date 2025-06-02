@@ -8,8 +8,8 @@
  */
 
 import { PlayerCurrencyState } from "shared/FusionUI/states";
-import { BaseFrame, IconButton, Lists } from "../../atoms";
-import { MenuButton } from "shared/FusionUI/molecules/MenuButton";
+import { ScrollContainer } from "../../atoms";
+import { MenuButton } from "shared/FusionUI/molecules/controls/MenuButton";
 import { MenuPanelState } from "shared/FusionUI/states/MenuPanelState";
 import { MenuButtonIcon } from "shared/assets/images/buttons";
 
@@ -58,11 +58,10 @@ export const MenuBar = (props: MenuBarProps) => {
 		}),
 	];
 
-	return BaseFrame({
-		Name: "MenuBar",
-		Size: props.Size,
-		Position: props.Position,
-		AnchorPoint: new Vector2(0, 0),
-		Children: [Lists.HorizontalList(buttons)],
+	return ScrollContainer({
+		Type: "Horizontal",
+		Size: props.Size ?? new UDim2(1, 0, 1, 0),
+		Position: props.Position ?? new UDim2(0, 0, 0, 0),
+		Children: buttons,
 	});
 };
