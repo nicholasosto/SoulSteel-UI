@@ -39,7 +39,7 @@ export const SocketGrid = (props: SocketGridProps) => {
 		BackgroundTransparency: 1,
 		[Children]: {
 			Layout: LayoutTokens.Horizontal(4),
-			Sockets: ForPairs(props.sockets, (i, gem) => [i, SocketButton({ socketIndex: i as number, gem })]),
+			Sockets: ForPairs(props.sockets, (i, gem) => $tuple(i, SocketButton({ socketIndex: i as number, gem }))),
 		},
 	});
 };
