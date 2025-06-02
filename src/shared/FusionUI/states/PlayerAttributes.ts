@@ -13,13 +13,29 @@
  */
 
 import Fusion from "@rbxts/fusion";
+import { format } from "@rbxts/net/out/internal";
+import { AttributeKey, ATTR_KEYS } from "shared/constants/keys";
+import { AttributesDTO } from "shared/DTO/AttributesDTO";
 
-export class PlayerAttributes {
-	public static Attributes: Record<string, Fusion.Value<number>> = {
-		Strength: Fusion.Value(10),
-		Dexterity: Fusion.Value(10),
-		Intelligence: Fusion.Value(10),
-		Vitality: Fusion.Value(10),
-		Luck: Fusion.Value(10),
-	};
+export type AttributeState = Record<AttributeKey, Fusion.Value<number>>;
+
+function makeAttributeState(dto: AttributesDTO): AttributeState {
+	const state = {} as AttributeState;
+	(ATTR_KEYS as readonly AttributeKey[]).forEach((k) => {
+		state[k] = Fusion.Value(dto[k]);
+	});
+	return state;
 }
+
+function addAttribute(attrState: AttributeState, key: AttributeKey, amount: number) {
+	const current = attrState[key].get();
+	const clamped = math.clamp(current + amount, 0, 114);
+	attrState[key].set(clamped);
+}
+
+export const PlayerAttributes = makeAttributeState({
+	str: 0,
+	agi: 2,
+	vit: 3,
+	int: 4,
+} as AttributesDTO);

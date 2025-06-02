@@ -1,5 +1,5 @@
 //#CODEX: please Add header and comments
-import { PlayerAttributes } from "shared/FusionUI/states";
+import { AttributeState, PlayerAttributes } from "shared/FusionUI/states";
 import { AttributeControl } from "../AttributeControl";
 import { New, Value, Children } from "@rbxts/fusion";
 import { AttributeAssetId } from "shared/assets/images/attribute";
@@ -7,29 +7,25 @@ import { LayoutTokens } from "shared/FusionUI/theme";
 
 const StrengthControl = AttributeControl({
 	iconId: AttributeAssetId["Strength"],
-	state: PlayerAttributes.Attributes["Strength"],
+	state: PlayerAttributes.str,
 });
-
 const DexterityControl = AttributeControl({
 	iconId: AttributeAssetId["Dexterity"],
-	state: PlayerAttributes.Attributes["Dexterity"],
+	state: PlayerAttributes.agi,
 });
-
 const IntelligenceControl = AttributeControl({
 	iconId: AttributeAssetId["Intelligence"],
-	state: PlayerAttributes.Attributes["Intelligence"],
+	state: PlayerAttributes.int,
 });
 
 const VitalityControl = AttributeControl({
 	iconId: AttributeAssetId["Vitality"],
-	state: PlayerAttributes.Attributes["Vitality"],
+	state: PlayerAttributes.vit,
 });
-
 const LuckControl = AttributeControl({
 	iconId: AttributeAssetId["Luck"],
-	state: PlayerAttributes.Attributes["Luck"],
+	state: Value(0), // Assuming Luck is not in PlayerAttributes, using a default value
 });
-
 export const AttributeControls = () => {
 	return New("Frame")({
 		Name: "AttributeControls",
