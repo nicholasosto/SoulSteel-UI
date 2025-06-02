@@ -1,3 +1,25 @@
+/// <reference types="@rbxts/types" />
+
+/**
+ * @file        Panel.ts
+ * @module      Panel
+ * @layer       Molecule
+ * @description Basic panel container with a title bar and close button.
+ *
+ * ╭───────────────────────────────╮
+ * │  Soul Steel · Coding Guide    │
+ * │  Fusion v4 · Strict TS · ECS  │
+ * ╰───────────────────────────────╯
+ *
+ * @author       Trembus
+ * @license      MIT
+ * @since        0.1.0
+ * @lastUpdated  2025-06-02 by Codex – Added documentation header
+ *
+ * @dependencies
+ *   @rbxts/fusion ^0.4.0
+ */
+
 import Fusion, { Children, Computed, New } from "@rbxts/fusion";
 import { CornerToken } from "../theme";
 import { IconButton } from "../atoms";
