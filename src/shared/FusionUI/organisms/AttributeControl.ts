@@ -1,5 +1,5 @@
 import Fusion, { Value, New, Children } from "@rbxts/fusion";
-import { ATTRIBUTE_META, AttributeKey } from "shared/keys";
+import { ATTRIBUTE_META, AttributeKey } from "shared/data/keys";
 import { AttributeIcon, ValueLabel } from "shared/FusionUI/atoms";
 import { Stepper } from "shared/FusionUI/molecules/controls/Stepper";
 import { LayoutTokens } from "../theme";
@@ -41,7 +41,6 @@ export const AttributeControl = (p: AttributeControlProps) => {
 				disabled: p.readOnly,
 				LayoutOrder: 2,
 			}),
-			
 		},
 	});
 };

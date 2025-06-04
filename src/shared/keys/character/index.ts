@@ -1,1 +1,1 @@
-export * from "./attributes";
+export * from "../../data/keys/attributes";

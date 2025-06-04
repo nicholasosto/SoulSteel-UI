@@ -1,5 +1,5 @@
 import { ResourceRemotes } from "shared/Net/remotes";
-import { ResourceBarsDTO } from "shared/DTO";
+import { ResourceBarsDTO } from "shared/data/DTO";
 import { Players } from "@rbxts/services";
 
 const GetResources = ResourceRemotes.Server.Get("GetResources");

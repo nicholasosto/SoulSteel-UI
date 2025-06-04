@@ -1,7 +1,7 @@
 //#CODEX please Add header and comments
 
 import Fusion from "@rbxts/fusion";
-import { ATTR_KEYS, AttributeKey } from "shared/keys";
+import { ATTR_KEYS, AttributeKey } from "shared/data/keys";
 import { HoldButton } from "../atoms";
 import { AttributeControl } from "../organisms";
 import { LayoutTokens } from "../theme";

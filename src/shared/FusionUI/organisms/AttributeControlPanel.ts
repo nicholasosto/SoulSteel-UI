@@ -3,7 +3,7 @@
  */
 
 import { Children, New } from "@rbxts/fusion";
-import { ATTR_KEYS } from "shared/keys";
+import { ATTR_KEYS } from "shared/data/keys";
 
 export interface AttributeControlPanelProps {
 	attributes: typeof ATTR_KEYS;
