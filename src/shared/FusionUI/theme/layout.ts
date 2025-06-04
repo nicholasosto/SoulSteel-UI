@@ -18,10 +18,10 @@ export const LayoutTokens = {
 			Name: "HorizontalLayout",
 			SortOrder: Enum.SortOrder.LayoutOrder,
 			FillDirection: Enum.FillDirection.Horizontal,
-			// VerticalFlex: Enum.UIFlexAlignment.SpaceAround,
+			VerticalFlex: Enum.UIFlexAlignment.SpaceAround,
 			HorizontalFlex: Enum.UIFlexAlignment.SpaceEvenly,
-			// HorizontalAlignment: Enum.HorizontalAlignment.Center,
-			// VerticalAlignment: Enum.VerticalAlignment.Center,
+			HorizontalAlignment: Enum.HorizontalAlignment.Center,
+			VerticalAlignment: Enum.VerticalAlignment.Center,
 			Padding: new UDim(0, padding ?? 0),
 		}),
 	Grid: () =>

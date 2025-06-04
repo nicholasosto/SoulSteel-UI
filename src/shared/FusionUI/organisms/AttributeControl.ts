@@ -1,32 +1,47 @@
-import { Value, New, Children } from "@rbxts/fusion";
+import Fusion, { Value, New, Children } from "@rbxts/fusion";
+import { ATTRIBUTE_META, AttributeKey } from "shared/keys";
 import { AttributeIcon, ValueLabel } from "shared/FusionUI/atoms";
 import { Stepper } from "shared/FusionUI/molecules/controls/Stepper";
+import { LayoutTokens } from "../theme";
 // organisms/AttributeControl.ts
+
 interface AttributeControlProps {
-	iconId: string;
-	state: Value<number>;
-	min?: number;
-	max?: number;
+	gameKey: AttributeKey;
+	state: Fusion.Value<number>;
 	readOnly?: boolean;
+	LayoutOrder?: number;
+	ZIndex?: number;
 }
 
-export const AttributeControl = (p: AttributeControlProps) =>
-	New("Frame")({
-		Size: UDim2.fromOffset(240, 48),
+export const AttributeControl = (p: AttributeControlProps) => {
+	const meta = ATTRIBUTE_META[p.gameKey];
+	return New("Frame")({
+		Size: UDim2.fromOffset(220, 32),
 		BackgroundTransparency: 1,
+		LayoutOrder: p.LayoutOrder ?? 0,
+		ZIndex: p.ZIndex ?? 1,
 		[Children]: {
-			Layout: New("UIListLayout")({
-				FillDirection: Enum.FillDirection.Horizontal,
-				VerticalAlignment: Enum.VerticalAlignment.Center,
-				Padding: new UDim(0, 8),
+			Layout: LayoutTokens.Horizontal(),
+			Icon: AttributeIcon({ AssetId: meta.iconId, LayoutOrder: 0, ZIndex: 1 }),
+			DisplayName: New("TextLabel")({
+				Text: meta.displayName,
+				Font: Enum.Font.LuckiestGuy,
+				Size: new UDim2(0, 100, 1, 0),
+				TextColor3: Color3.fromRGB(255, 255, 255),
+				TextSize: 14,
+				TextXAlignment: Enum.TextXAlignment.Center,
+				TextYAlignment: Enum.TextYAlignment.Center,
+				BackgroundTransparency: 1,
+				LayoutOrder: 1,
 			}),
-			Icon: AttributeIcon({ AssetId: p.iconId }),
 			Stepper: Stepper({
 				state: p.state,
-				min: p.min,
-				max: p.max,
+				min: meta.min,
+				max: meta.max,
 				disabled: p.readOnly,
+				LayoutOrder: 2,
 			}),
-			Value: ValueLabel({ Value: p.state }),
+			
 		},
 	});
+};

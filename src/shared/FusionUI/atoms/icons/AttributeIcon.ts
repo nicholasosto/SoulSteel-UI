@@ -1,4 +1,4 @@
-import { New } from "@rbxts/fusion";
+import { Children, New } from "@rbxts/fusion";
 import { AttributeAssetId } from "shared/assets/images/attribute";
 
 /**
@@ -25,15 +25,23 @@ export interface AttributeIconProps {
 	AssetId: string | keyof typeof AttributeAssetId;
 	Size?: UDim2;
 	Tooltip?: string;
+	LayoutOrder?: number;
+	ZIndex?: number;
 }
 
 /** Atom for displaying an attribute icon with an optional tooltip. */
 export const AttributeIcon = (props: AttributeIconProps) => {
 	return New("ImageLabel")({
 		Name: "AttributeIcon",
-		Size: props.Size ?? new UDim2(0, 24, 0, 24),
+		Size: props.Size ?? UDim2.fromOffset(30, 30),
 		Image: props.AssetId,
 		BackgroundTransparency: 1,
 		[props.Tooltip ? "Tooltip" : ""]: props.Tooltip,
+		[Children]: [
+			New("UIAspectRatioConstraint")({
+				AspectRatio: 1,
+				AspectType: Enum.AspectType.FitWithinMaxSize,
+			}),
+		],
 	});
 };

@@ -1,17 +1,12 @@
 //#CODEX please Add header and comments
 
 import Fusion from "@rbxts/fusion";
+import { ATTR_KEYS, AttributeKey } from "shared/keys";
 import { HoldButton } from "../atoms";
-import { AttributeControlPanel } from "../organisms";
+import { AttributeControl } from "../organisms";
+import { LayoutTokens } from "../theme";
+import { PlayerAttributes } from "../states";
 const { New, Children } = Fusion;
-
-const HoldButtonTest = HoldButton({
-	holdDuration: 2,
-	onHoldComplete: () => {
-		print("Hold completed!");
-	},
-	text: "Hold Me",
-});
 
 const multiplyInstance = (instance: Instance, multiplier: number) => {
 	const clonedInstances: Instance[] = [];
@@ -31,9 +26,22 @@ const testFrame = New("Frame")({
 	BackgroundTransparency: 0.5,
 });
 
-const clonedFrames = multiplyInstance(testFrame, 10);
+const attributeControls: Instance[] = [];
+
+ATTR_KEYS.forEach((key) => {
+	const attribute = PlayerAttributes[key];
+	if (attribute) {
+		const attributeControl = AttributeControl({
+			gameKey: key,
+			state: attribute,
+			readOnly: false, // Set to true if you want to disable editing
+		});
+		attributeControls.push(attributeControl);
+	}
+});
 
 export const TestScreen = () => {
+	const stepperTestStateValue = PlayerAttributes.str || Fusion.Value(0);
 	return New("ScreenGui")({
 		Name: "TestScreen",
 		Parent: game.GetService("Players").LocalPlayer.WaitForChild("PlayerGui") as PlayerGui,
@@ -42,8 +50,25 @@ export const TestScreen = () => {
 		AutoLocalize: false,
 		ZIndexBehavior: Enum.ZIndexBehavior.Global,
 		[Children]: {
-			HoldButtonTest,
-			//FrameContainer:
+			ButtonTests: New("Frame")({
+				Name: "ButtonTests",
+				Size: UDim2.fromOffset(800, 600),
+				Position: new UDim2(0.5, 0, 0.5, 0),
+				AnchorPoint: new Vector2(0.5, 0.5),
+				BackgroundColor3: Color3.fromRGB(50, 50, 50),
+				BackgroundTransparency: 0.5,
+				[Children]: {
+					Layout: LayoutTokens.Vertical(),
+					HoldButton: HoldButton({
+						holdDuration: 2,
+						onHoldComplete: () => {
+							print("Hold completed!");
+						},
+						text: "Hold Me",
+					}),
+					AttributeControls: attributeControls,
+				},
+			}),
 		},
 	});
 };

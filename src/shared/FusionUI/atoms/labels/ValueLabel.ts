@@ -27,20 +27,25 @@ export interface ValueLabelProps {
 	Size?: UDim2;
 	/** Optional tooltip for the label. */
 	Tooltip?: string;
+	LayoutOrder?: number;
+	ZIndex?: number;
 }
 
 export const ValueLabel = (props: ValueLabelProps) => {
 	return New("TextLabel")({
 		Name: "ValueLabel",
-		Size: props.Size ?? new UDim2(0, 100, 0, 24),
+		Size: props.Size ?? new UDim2(0, 40, 1, 0),
 		Text: Computed(() => {
 			return tostring(props.Value.get());
 		}),
+		LayoutOrder: props.LayoutOrder,
+		ZIndex: props.ZIndex ?? 1,
 		TextColor3: Color3.fromRGB(255, 255, 255),
-		TextSize: 14,
-		TextXAlignment: Enum.TextXAlignment.Left,
+		TextSize: 15,
+		TextXAlignment: Enum.TextXAlignment.Center,
 		TextYAlignment: Enum.TextYAlignment.Center,
 		BackgroundTransparency: 1,
+		Font: Enum.Font.LuckiestGuy,
 		[props.Tooltip ? "Tooltip" : ""]: props.Tooltip,
 	});
 };

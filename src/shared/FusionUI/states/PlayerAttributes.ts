@@ -13,7 +13,6 @@
  */
 
 import Fusion from "@rbxts/fusion";
-import { format } from "@rbxts/net/out/internal";
 import { AttributeKey, ATTR_KEYS } from "shared/keys";
 import { AttributesDTO } from "shared/DTO/AttributesDTO";
 
@@ -34,7 +33,7 @@ function addAttribute(attrState: AttributeState, key: AttributeKey, amount: numb
 }
 
 export const PlayerAttributes = makeAttributeState({
-	str: 0,
+	str: 12,
 	agi: 2,
 	vit: 3,
 	int: 4,
