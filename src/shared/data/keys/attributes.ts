@@ -10,7 +10,7 @@ interface AttributeInfo {
 	max: number;
 }
 
-export const ATTRIBUTE_META: Record<AttributeKey, AttributeInfo> = {
+export const AttributeMeta: Record<AttributeKey, AttributeInfo> = {
 	str: { displayName: "Strength", iconId: "rbxassetid://127745571044516", min: 1, max: 999 },
 	agi: { displayName: "Agility", iconId: "rbxassetid://73893872719367", min: 1, max: 999 },
 	vit: { displayName: "Vitality", iconId: "rbxassetid://121291227474039", min: 1, max: 999 },

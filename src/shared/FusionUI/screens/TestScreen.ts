@@ -3,9 +3,10 @@
 import Fusion from "@rbxts/fusion";
 import { ATTR_KEYS, AttributeKey } from "shared/data/keys";
 import { HoldButton } from "../atoms";
-import { AttributeControl } from "../organisms";
+import { AttributeControl, AttributeControlPanel } from "../organisms";
 import { LayoutTokens } from "../theme";
 import { PlayerAttributes } from "../states";
+import { AttributeAssetId } from "shared/assets/images";
 const { New, Children } = Fusion;
 
 const multiplyInstance = (instance: Instance, multiplier: number) => {
@@ -66,7 +67,10 @@ export const TestScreen = () => {
 						},
 						text: "Hold Me",
 					}),
-					AttributeControls: attributeControls,
+					//AttributeControls: attributeControls,
+					AttributePanel: AttributeControlPanel({
+						attributes: ATTR_KEYS,
+					}),
 				},
 			}),
 		},

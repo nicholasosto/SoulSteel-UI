@@ -1,5 +1,5 @@
 import Fusion, { Value, New, Children } from "@rbxts/fusion";
-import { ATTRIBUTE_META, AttributeKey } from "shared/data/keys";
+import { AttributeMeta, AttributeKey } from "shared/data/keys";
 import { AttributeIcon, ValueLabel } from "shared/FusionUI/atoms";
 import { Stepper } from "shared/FusionUI/molecules/controls/Stepper";
 import { LayoutTokens } from "../theme";
@@ -14,7 +14,7 @@ interface AttributeControlProps {
 }
 
 export const AttributeControl = (p: AttributeControlProps) => {
-	const meta = ATTRIBUTE_META[p.gameKey];
+	const meta = AttributeMeta[p.gameKey];
 	return New("Frame")({
 		Size: UDim2.fromOffset(220, 32),
 		BackgroundTransparency: 1,
