@@ -38,7 +38,7 @@ export const StepButton = (p: StepButtonProps) =>
 		LayoutOrder: p.LayoutOrder ?? 0,
 		ZIndex: p.ZIndex ?? 1,
 		Image: p.direction === "up" ? ControlButtonIcon["Increase"] : ControlButtonIcon["Decrease"],
-		ImageColor3: p.disabled ? Color3.fromRGB(80, 80, 80) : Color3.fromRGB(255, 56, 42),
+		ImageColor3: p.disabled ? Color3.fromRGB(5, 5, 5) : Color3.fromRGB(255, 255, 255),
 		AutoButtonColor: false,
 		[OnEvent("Activated")]: () => {
 			if (!p.disabled) p.onClick();
