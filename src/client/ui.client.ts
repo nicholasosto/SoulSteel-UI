@@ -9,6 +9,10 @@ import Fusion from "@rbxts/fusion";
 import { Players } from "@rbxts/services";
 import { EquipmentPanel, PlayerHUD, TestScreen, WeaponUpgradeScreen } from "shared/FusionUI/screens";
 
+const PlayerGUI = Players.LocalPlayer.WaitForChild("PlayerGui") as PlayerGui;
+const DummyScreen = PlayerGUI.WaitForChild("DUMMY") as ScreenGui;
+
+DummyScreen.Enabled = false; // Disable the dummy screen if it exists
 /* Screens ========================================= */
 //PlayerHUD();
 //EquipmentPanel();

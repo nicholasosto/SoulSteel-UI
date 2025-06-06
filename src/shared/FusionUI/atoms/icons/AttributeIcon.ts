@@ -32,16 +32,26 @@ export interface AttributeIconProps {
 /** Atom for displaying an attribute icon with an optional tooltip. */
 export const AttributeIcon = (props: AttributeIconProps) => {
 	return New("ImageLabel")({
-		Name: "AttributeIcon",
-		Size: props.Size ?? UDim2.fromOffset(30, 30),
-		Image: props.AssetId,
-		BackgroundTransparency: 1,
+		BackgroundColor3: new Color3(1, 1, 1),
+		BackgroundTransparency: 0.6,
+		Image: "rbxassetid://127745571044516",
+		Interactable: false,
+		ScaleType: Enum.ScaleType.Fit,
+		Size: UDim2.fromOffset(40, 40),
 		[props.Tooltip ? "Tooltip" : ""]: props.Tooltip,
-		[Children]: [
-			New("UIAspectRatioConstraint")({
+		[Children]: {
+			AspectRatioConstraint: New("UIAspectRatioConstraint")({
 				AspectRatio: 1,
 				AspectType: Enum.AspectType.FitWithinMaxSize,
 			}),
-		],
+			UICorner: New("UICorner")({
+				CornerRadius: new UDim(0, 8),
+			}),
+			UIStroke: New("UIStroke")({
+				Color: new Color3(0, 0, 0),
+				Thickness: 1,
+				ApplyStrokeMode: Enum.ApplyStrokeMode.Border,
+			}),
+		},
 	});
 };

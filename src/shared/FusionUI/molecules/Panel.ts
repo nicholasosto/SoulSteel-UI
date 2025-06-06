@@ -34,7 +34,7 @@ export interface PanelProps {
 	AnchorPoint?: Vector2;
 	Title?: string;
 	OnClose?: () => void;
-	[Children]?: Instance | Instance[] | { [key: string]: Instance | Fusion.Value<Instance> };
+	[Children]?: Fusion.ChildrenValue;
 }
 
 /** Basic panel with title bar and close button. */
@@ -48,6 +48,10 @@ export const Panel = (props: PanelProps) => {
 		AnchorPoint: props.AnchorPoint ?? new Vector2(0.5, 0.5),
 		BackgroundColor3: new Color3(0.15, 0.15, 0.15),
 		[Children]: {
+			DragDetector: New("UIDragDetector")({
+				Enabled: true,
+				Name: "DragDetector",
+			}),
 			Corner: CornerToken(6),
 			TitleBar: New("TextLabel")({
 				Name: "TitleBar",

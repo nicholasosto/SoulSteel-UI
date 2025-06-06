@@ -1,54 +1,47 @@
 /**
- *
+ * AttributeControlPanel.ts
+ * @file        AttributeControlPanel.ts
+ * @module      AttributeControlPanel
+ * @layer       Organism
+ * @description Displays a panel of attribute controls for the player.
  */
 
-import { Children, New } from "@rbxts/fusion";
+/* Imports */
 import { ATTR_KEYS } from "shared/data/keys";
 import { PlayerAttributes } from "../../states";
 import { AttributeControl } from "./AttributeControl";
 import { LayoutTokens } from "../../theme";
-import { RedFrameContainer } from "shared/FusionUI/atoms/containers";
+import { ContentContainer } from "shared/FusionUI/atoms/containers/ContentContainer";
 
+/* Interface */
 export interface AttributeControlPanelProps {
 	attributes: typeof ATTR_KEYS;
 }
 
+/* Component */
 export function AttributeControlPanel(props: AttributeControlPanelProps) {
 	const { attributes } = props;
 
-	// const component = New("Frame")({
-	// 	Name: "AttributeControlPanel",
-	// 	Size: new UDim2(0, 255, 0, 250),
-	// 	BackgroundColor3: Color3.fromRGB(224, 10, 10),
-	// 	BackgroundTransparency: 0.9,
-	// 	ClipsDescendants: true,
-	// 	AnchorPoint: new Vector2(0.5, 0),
-	// 	Position: new UDim2(0.5, 0, 0, 0),
-	// 	ZIndex: 2,
-	// 	[Children]: {
-	// 		Layout: LayoutTokens.Vertical(),
-	// 		Attributes: attributes.map((attr) => {
-	// 			return AttributeControl({
-	// 				gameKey: attr,
-	// 				state: PlayerAttributes[attr],
-	// 			});
-	// 		}),
-	// 	},
-	// });
-
-	const component = RedFrameContainer({
-		Name: "AttributeControlPanel",
-		Size: new UDim2(0, 255, 0, 250),
-		Position: new UDim2(0.5, 0, 0, 0),
-		Children: {
-			Layout: LayoutTokens.Vertical(),
-			Attributes: attributes.map((attr) => {
-				return AttributeControl({
-					gameKey: attr,
-					state: PlayerAttributes[attr],
-				});
-			}),
-		},
+	/* Create Attribute Controls */
+	const AttributeControls = attributes.map((attr) => {
+		return AttributeControl({
+			gameKey: attr,
+			state: PlayerAttributes[attr],
+			LayoutOrder: attributes.indexOf(attr),
+			ZIndex: 2,
+		});
 	});
-	return component;
+
+	/* Create the content container */
+	const contentContainer = ContentContainer({
+		ContentChildren: AttributeControls,
+		ContentLayout: LayoutTokens.Vertical(4),
+		Name: "AttributeControlPanel",
+		Size: new UDim2(0, 260, 0, 260),
+		Position: new UDim2(0.5, 0, 0.5, 0),
+		AnchorPoint: new Vector2(0.5, 0.5),
+		ZIndex: 111,
+	});
+
+	return contentContainer;
 }

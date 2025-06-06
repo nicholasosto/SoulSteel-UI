@@ -1,7 +1,9 @@
 import Fusion from "@rbxts/fusion";
 import { ATTR_KEYS } from "shared/data/keys";
-import { AttributeControlPanel } from "../organisms";
-import { RedFrameContainer } from "shared/FusionUI/atoms";
+import { AttributeControlPanel, GemInventory } from "../organisms";
+import { HoldButton } from "shared/FusionUI/atoms";
+import { InputAtom } from "../atoms/input/InputAtom";
+import { Panel } from "../molecules/Panel";
 const { New, Children } = Fusion;
 
 export const TestScreen = () => {
@@ -11,17 +13,27 @@ export const TestScreen = () => {
 		ResetOnSpawn: false,
 		IgnoreGuiInset: false,
 		AutoLocalize: false,
-		ZIndexBehavior: Enum.ZIndexBehavior.Global,
+		ZIndexBehavior: Enum.ZIndexBehavior.Sibling,
 		[Children]: {
-			Containers: RedFrameContainer({
-				Name: "TestScreenContainer",
-				Size: new UDim2(0, 400, 0, 300),
-				Children: {
-					AttributePanel: AttributeControlPanel({
+			Panel: Panel({
+				Name: "TestPanel",
+				Size: new UDim2(0.5, 0, 0.5, 0),
+				Position: new UDim2(0.25, 0, 0.25, 0),
+				AnchorPoint: new Vector2(0.5, 0.5),
+				Title: "Test Panel",
+				[Children]: {
+					AttributeControls: AttributeControlPanel({
 						attributes: ATTR_KEYS,
 					}),
 				},
 			}),
+			// AttributeControls: AttributeControlPanel({
+			// 	attributes: ATTR_KEYS,
+			// }),
+			// InputAtom: InputAtom({
+			// 	value: Fusion.Value("Type here..."),
+			// 	placeholder: "Enter text...",
+			// }),
 		},
 	});
 };
