@@ -1,11 +1,7 @@
 // Place organism components here as the system grows.
-export * from "./AttributeControl";
-export * from "./AttributeControlPanel";
-export * from "./PlayerHUD/CharacterCard";
-export * from "./PlayerHUD/MenuBar";
-export * from "./PlayerHUD/CurrencyCard";
-export * from "./PlayerHUD/ActionBar";
+export * from "./attributeComponents/AttributeControl";
+export * from "./attributeComponents/AttributeControlPanel";
+export * from "./HUDComponents";
 export * from "./SocketGrid";
 export * from "./GemInventory";
 export * from "./UpgradePanel";
-export * from "./groupings";

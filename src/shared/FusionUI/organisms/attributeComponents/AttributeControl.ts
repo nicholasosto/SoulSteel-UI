@@ -2,7 +2,7 @@ import Fusion, { Value, New, Children } from "@rbxts/fusion";
 import { AttributeMeta, AttributeKey } from "shared/data/keys";
 import { AttributeIcon, ValueLabel } from "shared/FusionUI/atoms";
 import { Stepper } from "shared/FusionUI/molecules/controls/Stepper";
-import { LayoutTokens } from "../theme";
+import { LayoutTokens } from "../../theme";
 // organisms/AttributeControl.ts
 
 interface AttributeControlProps {

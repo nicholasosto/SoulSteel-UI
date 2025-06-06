@@ -22,6 +22,7 @@
 
 export * from "./Avatar";
 export * from "./BaseFrame";
+export * from "./containers";
 export * from "./icons/GemIcon";
 export * from "./SocketBackdrop";
 export * from "./DragGhost";

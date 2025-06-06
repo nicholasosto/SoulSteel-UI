@@ -23,15 +23,18 @@
 import Fusion, { Children, New } from "@rbxts/fusion";
 
 export interface FrameContainerProps {
+	Name?: string;
+	BackgroundTransparency?: number;
 	Children?: Fusion.ChildrenValue;
 	Size?: UDim2;
 	Position?: UDim2;
 }
 
-export const FrameContainer = (props: FrameContainerProps) => {
+export const RedFrameContainer = (props: FrameContainerProps) => {
 	const { Children: children, Size, Position } = props;
 	return New("ImageLabel")({
-		BackgroundTransparency: 1,
+		Name: props.Name ?? "RedFrameContainer",
+		BackgroundTransparency: props.BackgroundTransparency ?? 1,
 		Size: Size ?? new UDim2(1, 0, 1, 0), // Default to full size if not provided
 		Position: Position ?? new UDim2(0, 0, 0, 0), // Default to top-left if not provided
 		AnchorPoint: new Vector2(0, 0),
