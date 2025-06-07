@@ -1,3 +1,28 @@
+/**
+ * @file        GameLabel.ts
+ * @module      GameLabel
+ * @layer       Atom
+ * @description Displays a game-specific label, such as a title or section header.
+ *
+ * ╭───────────────────────────────╮
+ * │  Soul Steel · UI Guide        │
+ * │  Fusion v4 · Strict TS · ECS  │
+ * ╰───────────────────────────────╯
+ *
+ * @author        Trembus
+ * @license       MIT
+ * @since         0.1.0
+ * @lastUpdated   2025-06-07 — AGENTS header update
+ *
+ * @dependencies
+ *   @rbxts/fusion ^0.4.0
+ *
+ * @composition
+ *   @atoms
+ *     GameLabel
+ *
+ */
+
 import Fusion from "@rbxts/fusion";
 
 const { New, Children } = Fusion;

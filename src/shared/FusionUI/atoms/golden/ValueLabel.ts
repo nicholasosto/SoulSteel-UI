@@ -2,20 +2,25 @@
  * @file        ValueLabel.ts
  * @module      ValueLabel
  * @layer       Atom
- * @description Atom for displaying a value label.
+ * @description Displays a value label, typically for stats or attributes.
  *
  * ╭───────────────────────────────╮
- * │  Soul Steel · Coding Guide    │
+ * │  Soul Steel · UI Guide        │
  * │  Fusion v4 · Strict TS · ECS  │
  * ╰───────────────────────────────╯
  *
- * @author       Trembus
- * @license      MIT
- * @since        0.1.0
- * @lastUpdated  2025-05-29 by Codex – Header update
+ * @author        Trembus
+ * @license       MIT
+ * @since         0.1.0
+ * @lastUpdated   2025-06-07 — AGENTS header update
  *
  * @dependencies
  *   @rbxts/fusion ^0.4.0
+ *
+ * @composition
+ *   @atoms
+ *     ValueLabel
+ *
  */
 
 import Fusion, { Computed, New } from "@rbxts/fusion";

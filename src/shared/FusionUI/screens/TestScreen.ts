@@ -4,7 +4,7 @@ import { AttributeControlPanel } from "../organisms";
 import { Panel } from "../molecules/Panel";
 import { GameLabel, SubPanel } from "../atoms";
 import { LayoutTokens } from "../theme";
-import { InfoLabel, LevelGem } from "../molecules";
+import { InfoLabel, GemCounter } from "../molecules";
 import { PlayerAttributes } from "../states";
 const { New, Children } = Fusion;
 
@@ -49,7 +49,7 @@ export const TestScreen = () => {
 						AnchorPoint: new Vector2(0, 1),
 						ContentChildren: [
 							InfoLabel({ Value: TempStates.Health, Text: "Health" }),
-							LevelGem({ Level: TempStates.Level }),
+							GemCounter({ FusionNumber: TempStates.Level }),
 						],
 						ContentLayout: LayoutTokens.Vertical(),
 					}),

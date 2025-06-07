@@ -22,5 +22,5 @@
 
 export * from "./controls";
 export * from "./InfoLabel";
-export * from "./LevelGem";
+export * from "./GemCounter.story";
 export * from "./Panel";

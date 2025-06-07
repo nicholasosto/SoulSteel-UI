@@ -16,9 +16,17 @@
  *
  * @dependencies
  *   @rbxts/fusion ^0.4.0
+ * * @composition
+ *   @atoms
+ *    ValueLabel       – Displays a state slice value with optional formatting
+ *    GameLabel        – Displays a game-specific label
+ *
+ *   @molecules
+ *   (This file): Combines ValueLabel and GameLabel into a single InfoLabel component
+ *
  */
 import { ValueLabel, GameLabel } from "../atoms";
-import Fusion, { Children, Computed, New } from "@rbxts/fusion";
+import Fusion, { Children, New } from "@rbxts/fusion";
 
 /**
  * @interface InfoLabelProps
@@ -43,7 +51,7 @@ import Fusion, { Children, Computed, New } from "@rbxts/fusion";
  */
 export interface InfoLabelProps {
 	/** The value to display in the label. */
-	Value: Fusion.Value<string | number>;
+	Value?: Fusion.Value<string | number>;
 	Text?: string;
 	/** Optional size for the label. */
 	Size?: UDim2;
@@ -52,6 +60,14 @@ export interface InfoLabelProps {
 	LayoutOrder?: number;
 	ZIndex?: number;
 }
+
+/* Default Properties */
+const DefaultProps: Partial<InfoLabelProps> = {
+	Value: Fusion.Value("Value Not Set"),
+	Size: new UDim2(0, 40, 1, 0),
+	LayoutOrder: 0,
+	ZIndex: 1,
+};
 
 /**
  *
@@ -68,14 +84,12 @@ export const InfoLabel = (props: InfoLabelProps) => {
 		LayoutOrder: props.LayoutOrder,
 		ZIndex: props.ZIndex ?? 1,
 		[Children]: {
-			ValueLabel: ValueLabel({ Value: props.Value, LayoutOrder: 1 }),
-			GameLabel: props.Text
-				? GameLabel({
-						Text: props.Text,
-						Size: UDim2.fromScale(0.5, 1),
-						LayoutOrder: 0,
-					})
-				: undefined,
+			ValueLabel: ValueLabel({ Value: props.Value ?? DefaultProps.Value!, LayoutOrder: 1 }),
+			GameLabel: GameLabel({
+				Text: props.Text ?? "",
+				Size: UDim2.fromScale(0.5, 1),
+				LayoutOrder: 0,
+			}),
 		},
 	});
 };

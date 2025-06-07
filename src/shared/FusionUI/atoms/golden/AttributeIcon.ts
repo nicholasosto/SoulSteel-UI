@@ -3,22 +3,27 @@ import { AttributeAssetId } from "shared/assets/images/attribute";
 
 /**
  * @file        AttributeIcon.ts
- * @module      attributeIconAtoms
+ * @module      AttributeIcon
  * @layer       Atom
- * @description Atom for displaying an attribute icon.
+ * @description Displays an attribute icon, typically for player stats or abilities.
  *
  * ╭───────────────────────────────╮
- * │  Soul Steel · Coding Guide    │
+ * │  Soul Steel · UI Guide        │
  * │  Fusion v4 · Strict TS · ECS  │
  * ╰───────────────────────────────╯
  *
- * @author       Trembus
- * @license      MIT
- * @since        0.1.0
- * @lastUpdated  2025-05-29 by Codex – Header update
+ * @author        Trembus
+ * @license       MIT
+ * @since         0.1.0
+ * @lastUpdated   2025-06-07 — AGENTS header update
  *
  * @dependencies
  *   @rbxts/fusion ^0.4.0
+ *
+ * @composition
+ *   @atoms
+ *     AttributeIcon
+ *
  */
 
 export interface AttributeIconProps {

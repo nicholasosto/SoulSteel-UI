@@ -24,7 +24,7 @@ import { New, Value, Children } from "@rbxts/fusion";
 import { StepButton, ValueLabel } from "shared/FusionUI/atoms";
 import { LayoutTokens } from "shared/FusionUI/theme";
 
-interface StepperProps {
+export interface StepperProps {
 	state: Value<number>; // Fusion state slice for this attribute
 	stepSize?: number;
 	min?: number;

@@ -3,18 +3,23 @@ import { ValueLabel } from "../atoms";
 
 const { New, Value, Children } = Fusion;
 
-export interface LevelGemProps {
-	Level: Fusion.Value<number>;
+export interface GemCounterProps {
+	FusionNumber: Fusion.Value<number>;
+	Size?: UDim2;
+	Position?: UDim2;
+	AnchorPoint?: Vector2;
+	LayoutOrder?: number;
+	ZIndex?: number;
 }
 
-export const LevelGem = (props: LevelGemProps) => {
+export const GemCounter = (props: GemCounterProps) => {
 	return New("ImageLabel")({
 		Name: "LevelGem",
 		Size: new UDim2(0, 50, 0, 50),
 		BackgroundTransparency: 1,
 		Image: "rbxassetid://119000054151103", // Replace with actual gem image asset ID
 		ImageColor3: Computed(() => {
-			const level = props.Level.get();
+			const level = props.FusionNumber.get();
 			if (level < 10) {
 				return Color3.fromRGB(255, 0, 0); // Red for levels below 10
 			} else if (level < 20) {
@@ -27,7 +32,7 @@ export const LevelGem = (props: LevelGemProps) => {
 		}),
 		[Children]: {
 			LevelLabel: ValueLabel({
-				Value: props.Level,
+				Value: props.FusionNumber,
 				Size: new UDim2(1, 0, 1, 0),
 			}),
 		},
