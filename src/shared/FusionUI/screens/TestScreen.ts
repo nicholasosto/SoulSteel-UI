@@ -1,8 +1,6 @@
 import Fusion from "@rbxts/fusion";
 import { ATTR_KEYS } from "shared/data/keys";
-import { AttributeControlPanel, GemInventory } from "../organisms";
-import { HoldButton } from "shared/FusionUI/atoms";
-import { InputAtom } from "../atoms/input/InputAtom";
+import { AttributeControlPanel } from "../organisms";
 import { Panel } from "../molecules/Panel";
 const { New, Children } = Fusion;
 
@@ -27,13 +25,6 @@ export const TestScreen = () => {
 					}),
 				},
 			}),
-			// AttributeControls: AttributeControlPanel({
-			// 	attributes: ATTR_KEYS,
-			// }),
-			// InputAtom: InputAtom({
-			// 	value: Fusion.Value("Type here..."),
-			// 	placeholder: "Enter text...",
-			// }),
 		},
 	});
 };
