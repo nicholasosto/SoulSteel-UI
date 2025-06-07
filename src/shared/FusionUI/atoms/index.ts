@@ -31,3 +31,4 @@ export * from "./lists";
 export * from "./fillbar";
 export * from "./icons";
 export * from "./labels";
+export * from "./golden";

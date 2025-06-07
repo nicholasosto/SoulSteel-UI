@@ -32,9 +32,9 @@ export interface AttributeIconProps {
 /** Atom for displaying an attribute icon with an optional tooltip. */
 export const AttributeIcon = (props: AttributeIconProps) => {
 	return New("ImageLabel")({
-		BackgroundColor3: new Color3(1, 1, 1),
+		BackgroundColor3: new Color3(0, 0, 0),
 		BackgroundTransparency: 0.6,
-		Image: "rbxassetid://127745571044516",
+		Image: props.AssetId,
 		Interactable: false,
 		ScaleType: Enum.ScaleType.Fit,
 		Size: UDim2.fromOffset(40, 40),

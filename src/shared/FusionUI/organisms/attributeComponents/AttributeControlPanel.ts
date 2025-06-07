@@ -11,7 +11,7 @@ import { ATTR_KEYS } from "shared/data/keys";
 import { PlayerAttributes } from "../../states";
 import { AttributeControl } from "./AttributeControl";
 import { LayoutTokens } from "../../theme";
-import { ContentContainer } from "shared/FusionUI/atoms/containers/ContentContainer";
+import { SubPanel } from "shared/FusionUI/atoms";
 
 /* Interface */
 export interface AttributeControlPanelProps {
@@ -33,7 +33,7 @@ export function AttributeControlPanel(props: AttributeControlPanelProps) {
 	});
 
 	/* Create the content container */
-	const contentContainer = ContentContainer({
+	const contentContainer = SubPanel({
 		ContentChildren: AttributeControls,
 		ContentLayout: LayoutTokens.Vertical(4),
 		Name: "AttributeControlPanel",

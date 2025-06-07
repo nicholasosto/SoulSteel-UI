@@ -29,5 +29,8 @@
     "prettier": "^3.5.3",
     "roblox-ts": "^3.0.0",
     "typescript": "^5.8.3"
+  },
+  "typedocOptions": {
+    "customTags": ["atoms", "molecules", "organisms"]
   }
 }

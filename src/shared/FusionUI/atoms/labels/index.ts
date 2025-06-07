@@ -1,2 +1,2 @@
-export * from "./ValueLabel";
-export * from "./GameLabel";
+export * from "../golden/ValueLabel";
+export * from "../golden/GameLabel";

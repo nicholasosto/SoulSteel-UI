@@ -7,7 +7,7 @@
 /* Imports ========================================= */
 import Fusion from "@rbxts/fusion";
 import { Players } from "@rbxts/services";
-import { EquipmentPanel, PlayerHUD, TestScreen, WeaponUpgradeScreen } from "shared/FusionUI/screens";
+import { TestScreen } from "shared/FusionUI/screens";
 
 const PlayerGUI = Players.LocalPlayer.WaitForChild("PlayerGui") as PlayerGui;
 const DummyScreen = PlayerGUI.WaitForChild("DUMMY") as ScreenGui;

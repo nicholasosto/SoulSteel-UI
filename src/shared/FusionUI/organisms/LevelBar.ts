@@ -1,10 +1,10 @@
 /// <reference types="@rbxts/types" />
 
 /**
- * @file        index.ts
- * @module      buttonAtoms
- * @layer       Atom
- * @description Barrel exports for button atoms.
+ * @file        LevelBar.ts
+ * @module      LevelBar
+ * @layer       Organism
+ * @description Scrollable grid of the player's gems.
  *
  * ╭───────────────────────────────╮
  * │  Soul Steel · Coding Guide    │
@@ -13,15 +13,9 @@
  *
  * @author       Trembus
  * @license      MIT
- * @since        0.1.0
- * @lastUpdated  2025-05-29 by Codex – Header update
+ * @since        0.2.0
+ * @lastUpdated  2025-06-07 by Trembus – Initial creation
  *
  * @dependencies
  *   @rbxts/fusion ^0.4.0
  */
-
-export * from "./BasicButton";
-export * from "./HoldButton";
-export * from "./IconButton";
-export * from "./SlotButton";
-export * from "../golden/StepButton";

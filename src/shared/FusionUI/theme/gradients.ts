@@ -38,7 +38,7 @@ export const GradientTokens = {
 
 	AttributeControl: () => {
 		return New("UIGradient")({
-			Color: new ColorSequence(Color3.fromRGB(10, 64, 31), Color3.fromRGB(30, 30, 30)),
+			Color: new ColorSequence(Color3.fromRGB(41, 8, 8), Color3.fromRGB(0, 0, 0)),
 			Transparency: new NumberSequence(0.1, 0.2),
 			Rotation: 90,
 		});

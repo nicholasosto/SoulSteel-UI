@@ -1,4 +1,5 @@
 import Fusion, { Computed } from "@rbxts/fusion";
+import { ValueLabel } from "../atoms";
 
 const { New, Value, Children } = Fusion;
 
@@ -6,22 +7,29 @@ export interface LevelGemProps {
 	Level: Fusion.Value<number>;
 }
 
-export const LevelGem = (props: LevelGemProps): Frame => {
-	const level = Value(props.Level);
-
-	return New("Frame")({
+export const LevelGem = (props: LevelGemProps) => {
+	return New("ImageLabel")({
 		Name: "LevelGem",
-		Size: UDim2.fromOffset(50, 50),
-		BackgroundColor3: new Color3(0.2, 0.2, 0.2),
-		BackgroundTransparency: 0.5,
-		[Children]: [
-			New("TextLabel")({
-				Text: Computed(() => `${level.get()}`),
-				Size: UDim2.fromScale(1, 1),
-				BackgroundTransparency: 1,
-				TextColor3: new Color3(1, 1, 1),
-				TextScaled: true,
+		Size: new UDim2(0, 50, 0, 50),
+		BackgroundTransparency: 1,
+		Image: "rbxassetid://119000054151103", // Replace with actual gem image asset ID
+		ImageColor3: Computed(() => {
+			const level = props.Level.get();
+			if (level < 10) {
+				return Color3.fromRGB(255, 0, 0); // Red for levels below 10
+			} else if (level < 20) {
+				return Color3.fromRGB(255, 165, 0); // Orange for levels 10-19
+			} else if (level < 30) {
+				return Color3.fromRGB(255, 255, 0); // Yellow for levels 20-29
+			} else {
+				return Color3.fromRGB(0, 255, 0); // Green for levels 30 and above
+			}
+		}),
+		[Children]: {
+			LevelLabel: ValueLabel({
+				Value: props.Level,
+				Size: new UDim2(1, 0, 1, 0),
 			}),
-		],
+		},
 	});
 };
