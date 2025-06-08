@@ -4,17 +4,6 @@
  *
  * */
 
-/* Imports ========================================= */
-import Fusion from "@rbxts/fusion";
-import { Players } from "@rbxts/services";
-import { TestScreen } from "shared/FusionUI/screens";
+import { HudScreen } from "shared/FusionUI/hydration/HUD/HudScreen";
 
-const PlayerGUI = Players.LocalPlayer.WaitForChild("PlayerGui") as PlayerGui;
-const DummyScreen = PlayerGUI.WaitForChild("DUMMY") as ScreenGui;
-
-DummyScreen.Enabled = false; // Disable the dummy screen if it exists
-/* Screens ========================================= */
-//PlayerHUD();
-//EquipmentPanel();
-TestScreen();
-//WeaponUpgradeScreen();
+HudScreen();

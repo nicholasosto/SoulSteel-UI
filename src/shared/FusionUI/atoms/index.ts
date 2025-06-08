@@ -20,7 +20,7 @@
  *   @rbxts/fusion ^0.4.0
  */
 
-export * from "./Avatar";
+export * from "../hydration/HUD/Avatar";
 export * from "./BaseFrame";
 export * from "./containers";
 export * from "./icons/GemIcon";

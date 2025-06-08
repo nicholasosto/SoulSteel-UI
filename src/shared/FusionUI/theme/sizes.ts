@@ -1,3 +1,4 @@
+import { Value } from "@rbxts/fusion";
 import { LevelBar } from "../atoms";
 
 const TextSizes = {
@@ -19,4 +20,8 @@ export const CharacterCardSizes = {
 	LevelBarHeight: 45,
 	MenuBarHeight: 50,
 	CategortyButtonSize: 45,
+};
+
+export const StateSize = {
+	ResourceBarFrame: Value(UDim2.fromOffset(200, 25)),
 };
