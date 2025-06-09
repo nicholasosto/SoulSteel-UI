@@ -1,3 +1,5 @@
+import { math } from "@rbxts/math-utils";
+
 export interface BaseTrait {
 	kind: string;
 }
