@@ -1,9 +1,18 @@
 import { makeHello } from "shared/module";
 import { Players, Workspace } from "@rbxts/services";
+//import { PlayerClass } from "./Player/PlayerClass";
 print(makeHello("main.server.ts"));
+
+function CreatePlayerClass(player: Player) {
+	// This function would create a player class instance, but for now, we just print the player's name.
+	print(`Creating player class for: ${player.Name}`);
+
+	//return playerClass;
+}
 
 Players.PlayerAdded.Connect((player) => {
 	print(`Player added: ${player.Name}`);
+	CreatePlayerClass(player);
 
 	player.CharacterAdded.Connect((character) => {
 		print(`Character added for player: ${player.Name}`);

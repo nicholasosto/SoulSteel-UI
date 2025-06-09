@@ -52,7 +52,7 @@ export const AvatarHydrate = () => {
 
 	/* Set the AvatarImage in the hydration template */
 	hydrationTemplate.AvatarImage.Image = avatarImage;
-	Hydrate(hydrationTemplate)({
+	return Hydrate(hydrationTemplate)({
 		Parent: PlayerGUI,
 		Name: "AvatarCardHydrated",
 		Size: UDim2.fromOffset(90, 90),

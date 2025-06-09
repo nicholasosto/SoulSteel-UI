@@ -19,11 +19,10 @@ export interface AttributeControlPanelProps {
 }
 
 /* Component */
-export function AttributeControlPanel(props: AttributeControlPanelProps) {
-	const { attributes } = props;
-
+export function AttributeControlPanel() {
+	const attributes = ATTR_KEYS;
 	/* Create Attribute Controls */
-	const AttributeControls = attributes.map((attr) => {
+	const AttributeControls = ATTR_KEYS.map((attr) => {
 		return AttributeControl({
 			gameKey: attr,
 			state: PlayerAttributes[attr],

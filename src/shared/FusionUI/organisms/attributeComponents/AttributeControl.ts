@@ -1,5 +1,5 @@
 import Fusion, { Value, New, Children } from "@rbxts/fusion";
-import { AttributeMeta, AttributeKey } from "shared/data/keys";
+import { AttributesMeta, AttributeKey } from "shared/data/keys";
 import { AttributeIcon, GameLabel, ValueLabel } from "shared/FusionUI/atoms";
 import { Stepper } from "shared/FusionUI/molecules/controls/Stepper";
 import { CornerToken, GradientTokens, HighlightStrokeToken, LayoutTokens, StrokeToken } from "../../theme";
@@ -37,7 +37,7 @@ export const GameLabelComponent = (props: GameLabelProps) => {
 };
 
 export const AttributeControl = (p: AttributeControlProps) => {
-	const meta = AttributeMeta[p.gameKey];
+	const meta = AttributesMeta[p.gameKey];
 	return New("Frame")({
 		Size: AttributeControlSize,
 		Name: `AttributeControl_${p.gameKey}`,

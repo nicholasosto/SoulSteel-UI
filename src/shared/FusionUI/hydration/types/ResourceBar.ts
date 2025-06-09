@@ -1,6 +1,5 @@
 import Fusion, { Computed } from "@rbxts/fusion";
-import { HydrationTemplates } from "shared/constants";
-import { createFusionResource, FusionResource } from "shared/FusionUI/states/Helpers/FusionResource";
+import { FusionResource } from "shared/FusionUI/states/Helpers/FusionResource";
 
 const { New, Children, Hydrate } = Fusion;
 
@@ -13,23 +12,22 @@ export type ResourceBarType = Frame & {
 	};
 };
 
-/* Template */
-export const ResourceBarTemplate = HydrationTemplates.FindFirstChild("ResourceBar") as ResourceBarType;
-
-export function createResourceBar(resource: FusionResource, guiTemplate: ResourceBarType): ResourceBarType {
-	// Clone the template
-	const clone = guiTemplate.Clone();
-
+export function HydrateResourceBar(resource: FusionResource, resourceBar: ResourceBarType) {
 	// Get Reference to the Value Objects
-	const FillBar = clone.Hydrations.FillBar.Value as Frame;
-	const FillBarGradient = clone.Hydrations.FillBarGradient.Value as UIGradient;
-	const DisplayTextLabel = clone.Hydrations.DisplayTextLabel.Value as TextLabel;
+	const FillBar = resourceBar.Hydrations.FillBar.Value as Frame;
+	const FillBarGradient = resourceBar.Hydrations.FillBarGradient.Value as UIGradient;
+	const DisplayTextLabel = resourceBar.Hydrations.DisplayTextLabel.Value as TextLabel;
 
 	// Set up the DisplayLabel
 	Hydrate(DisplayTextLabel)({ Text: Computed(() => resource.label.get()) });
 
 	// Set up the FillBar
-	Hydrate(FillBar)({ Size: UDim2.fromScale(resource.percent.get(), 1) });
+	Hydrate(FillBar)({
+		Size: Computed(() => {
+			const percent = resource.percent.get();
+			return new UDim2(percent, 0, 1, 0);
+		}),
+	});
 
 	// Set up the FillBarGradient
 	Hydrate(FillBarGradient)({
@@ -42,12 +40,4 @@ export function createResourceBar(resource: FusionResource, guiTemplate: Resourc
 			return gradient.Color;
 		}),
 	});
-
-	return clone;
 }
-
-export const ResourceBars = {
-	Health: createResourceBar(createFusionResource(90, 100, new Color3(0.8, 0.1, 0.1)), ResourceBarTemplate),
-	Stamina: createResourceBar(createFusionResource(100, 100, new Color3(0.95, 0.65, 0.11)), ResourceBarTemplate),
-	SoulPower: createResourceBar(createFusionResource(100, 100, new Color3(0.1, 0.1, 0.8)), ResourceBarTemplate),
-};

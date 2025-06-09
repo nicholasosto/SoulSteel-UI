@@ -37,7 +37,7 @@
 
 /* Placeholders for future hydrated wrappers */
 
-export * from "./HydrateFrameBase";
+//export * from "./HydrateFrameBase";
 // export * from "./HydrateActionSlot";
 // export * from "./HydrateItemSlot";
 // export * from "./HydrateResourceBar";

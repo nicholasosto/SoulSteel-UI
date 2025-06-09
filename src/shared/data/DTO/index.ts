@@ -1,3 +1,3 @@
 export * from "./ResourceDTO";
 export * from "./FillBarBaseDTO";
-export * from "./PlayerDTOs";
+export * from "./ProfileData";

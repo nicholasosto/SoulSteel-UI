@@ -29,7 +29,7 @@ export interface FusionResource {
 }
 
 /* Factory Function */
-export function createFusionResource(initial: number, maxInitial: number, tint: Color3): FusionResource {
+export function createFusionResource(name: string, initial: number, maxInitial: number, tint: Color3): FusionResource {
 	const current = Value(initial);
 	const max = Value(maxInitial);
 
@@ -37,7 +37,7 @@ export function createFusionResource(initial: number, maxInitial: number, tint: 
 		current,
 		max,
 		percent: Computed(() => current.get() / max.get()),
-		label: Computed(() => `${math.floor(current.get())} / ${math.floor(max.get())}`),
+		label: Computed(() => `${name} : ${math.floor(current.get())} / ${math.floor(max.get())}`),
 		color: Value(tint),
 	};
 }
