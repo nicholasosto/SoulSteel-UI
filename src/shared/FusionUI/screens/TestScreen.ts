@@ -1,74 +1,72 @@
-//#CODEX please Add header and comments
-
-import Fusion from "@rbxts/fusion";
-import { ATTR_KEYS, AttributeKey } from "shared/keys";
-import { HoldButton } from "../atoms";
-import { AttributeControl } from "../organisms";
+import Fusion, { Value } from "@rbxts/fusion";
+import { ATTR_KEYS } from "shared/data/keys";
+import { AttributeControlPanel } from "../organisms";
+import { Panel } from "../molecules/Panel";
+import { GameLabel, SubPanel } from "../atoms";
 import { LayoutTokens } from "../theme";
+import { InfoLabel, GemCounter } from "../molecules";
 import { PlayerAttributes } from "../states";
 const { New, Children } = Fusion;
 
-const multiplyInstance = (instance: Instance, multiplier: number) => {
-	const clonedInstances: Instance[] = [];
-	for (let i = 0; i < multiplier; i++) {
-		const clone = instance.Clone();
-		clone.Parent = instance.Parent; // Ensure the clone is parented correctly
-		clone.Name = `${instance.Name}_${i + 1}`; // Rename the clone to avoid name conflicts
-		clonedInstances.push(clone);
-	}
-	return clonedInstances;
+const TempStates = {
+	AttributePoints: Value(20),
+	Level: Value(1),
+	Experience: Value(0),
+	NextLevelExperience: Value(100),
+	Health: Value(100),
+	Stamina: Value(100),
+	SoulPower: Value(50),
+
+	Coins: Value(1000),
+	Gems: Value(10),
+
+	DisplayName: Value("Destroyer of Worlds"),
+	Title: Value("The Conqueror"),
+
+	Power: Value(0),
 };
 
-const testFrame = New("Frame")({
-	Name: "TestFrame",
-	Size: new UDim2(0, 30, 0, 30),
-	BackgroundColor3: Color3.fromRGB(255, 0, 0),
-	BackgroundTransparency: 0.5,
-});
-
-const attributeControls: Instance[] = [];
-
-ATTR_KEYS.forEach((key) => {
-	const attribute = PlayerAttributes[key];
-	if (attribute) {
-		const attributeControl = AttributeControl({
-			gameKey: key,
-			state: attribute,
-			readOnly: false, // Set to true if you want to disable editing
-		});
-		attributeControls.push(attributeControl);
-	}
-});
-
 export const TestScreen = () => {
-	const stepperTestStateValue = PlayerAttributes.str || Fusion.Value(0);
 	return New("ScreenGui")({
 		Name: "TestScreen",
 		Parent: game.GetService("Players").LocalPlayer.WaitForChild("PlayerGui") as PlayerGui,
 		ResetOnSpawn: false,
 		IgnoreGuiInset: false,
 		AutoLocalize: false,
-		ZIndexBehavior: Enum.ZIndexBehavior.Global,
+		ZIndexBehavior: Enum.ZIndexBehavior.Sibling,
 		[Children]: {
-			ButtonTests: New("Frame")({
-				Name: "ButtonTests",
-				Size: UDim2.fromOffset(800, 600),
-				Position: new UDim2(0.5, 0, 0.5, 0),
+			Panel: Panel({
+				Name: "TestPanel",
+				Size: new UDim2(0.5, 0, 0.5, 0),
+				Position: new UDim2(0.25, 0, 0.25, 0),
 				AnchorPoint: new Vector2(0.5, 0.5),
-				BackgroundColor3: Color3.fromRGB(50, 50, 50),
-				BackgroundTransparency: 0.5,
+				Title: "Test Panel",
 				[Children]: {
-					Layout: LayoutTokens.Vertical(),
-					HoldButton: HoldButton({
-						holdDuration: 2,
-						onHoldComplete: () => {
-							print("Hold completed!");
-						},
-						text: "Hold Me",
+					//AttributeControls: AttributeControlPanel({ attributes: ATTR_KEYS }),
+					SubPanel: SubPanel({
+						Size: UDim2.fromOffset(300, 150),
+						Position: UDim2.fromScale(0.5, 1),
+						AnchorPoint: new Vector2(0, 1),
+						ContentChildren: [
+							InfoLabel({ Value: TempStates.Health, Text: "Health" }),
+							GemCounter({ FusionNumber: TempStates.Level }),
+						],
+						ContentLayout: LayoutTokens.Vertical(),
 					}),
-					AttributeControls: attributeControls,
 				},
 			}),
 		},
 	});
 };
+
+task.spawn(() => {
+	while (TempStates.Level.get() < 100) {
+		TempStates.Experience.set(TempStates.Experience.get() + 10);
+		if (TempStates.Experience.get() >= TempStates.NextLevelExperience.get()) {
+			TempStates.Level.set(TempStates.Level.get() + 1);
+			TempStates.Experience.set(0);
+			TempStates.NextLevelExperience.set(TempStates.NextLevelExperience.get() * 1.2); // Increase next level requirement
+		}
+		task.wait(1); // Update every second
+	}
+});

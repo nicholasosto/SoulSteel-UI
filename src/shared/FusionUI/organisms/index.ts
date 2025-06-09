@@ -1,11 +1,28 @@
-// Place organism components here as the system grows.
-export * from "./AttributeControl";
-export * from "./AttributeControlPanel";
-export * from "./PlayerHUD/CharacterCard";
-export * from "./PlayerHUD/MenuBar";
-export * from "./PlayerHUD/CurrencyCard";
-export * from "./PlayerHUD/ActionBar";
+/// <reference types="@rbxts/types" />
+
+/**
+ * @file        index.ts
+ * @module      index
+ * @layer       organism
+ * @description Barrel exports for organism components.
+ *
+ * ╭───────────────────────────────╮
+ * │  Soul Steel · Coding Guide    │
+ * │  Fusion v4 · Strict TS · ECS  │
+ * ╰───────────────────────────────╯
+ *
+ * @author       Trembus
+ * @license      MIT
+ * @since        0.1.0
+ * @lastUpdated  2025-05-29 by Codex – Header update
+ *
+ * @dependencies
+ *   @rbxts/fusion ^0.4.0
+ */
+
+export * from "./attributeComponents/AttributeControl";
+export * from "./attributeComponents/AttributeControlPanel";
+export * from "./HUDComponents";
 export * from "./SocketGrid";
 export * from "./GemInventory";
 export * from "./UpgradePanel";
-export * from "./groupings";

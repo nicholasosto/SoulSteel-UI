@@ -1,5 +1,5 @@
 import Net from "@rbxts/net";
-import { ResourceBarsDTO } from "shared/DTO";
+import { ResourceBarsDTO } from "shared/data/DTO";
 
 /* Resource Remotes */
 export const ResourceRemotes = Net.CreateDefinitions({

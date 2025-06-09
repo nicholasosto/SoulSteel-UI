@@ -1,2 +1,2 @@
-export * from "./AttributeIcon";
+export * from "../golden/AttributeIcon";
 export * from "./GemIcon";

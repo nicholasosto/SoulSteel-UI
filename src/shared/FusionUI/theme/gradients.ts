@@ -1,4 +1,5 @@
 import { New } from "@rbxts/fusion";
+import { AttributeControl } from "../organisms";
 
 /** Reusable gradient presets. */
 export const GradientTokens = {
@@ -34,4 +35,12 @@ export const GradientTokens = {
 			Transparency: new NumberSequence([new NumberSequenceKeypoint(0, 0), new NumberSequenceKeypoint(1, 0)]),
 			Enabled: true,
 		}),
+
+	AttributeControl: () => {
+		return New("UIGradient")({
+			Color: new ColorSequence(Color3.fromRGB(41, 8, 8), Color3.fromRGB(0, 0, 0)),
+			Transparency: new NumberSequence(0.1, 0.2),
+			Rotation: 90,
+		});
+	},
 };

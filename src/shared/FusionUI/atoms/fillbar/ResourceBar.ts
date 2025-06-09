@@ -23,10 +23,6 @@
 import Fusion, { Children, Computed, Value } from "@rbxts/fusion";
 import { createFusionResource, FusionResource } from "shared/FusionUI/states/Helpers/FusionResource";
 
-const HealthResource = createFusionResource(1, 100, new Color3(0.8, 0.1, 0.1));
-const SoulPowerResource = createFusionResource(50, 100, new Color3(0.1, 0.1, 0.8));
-const StaminaResource = createFusionResource(75, 100, new Color3(0.1, 0.8, 0.1));
-
 export interface ResourceBarProps {
 	FusionResource: FusionResource;
 }

@@ -13,8 +13,8 @@
  */
 
 import Fusion from "@rbxts/fusion";
-import { AttributeKey, ATTR_KEYS } from "shared/keys";
-import { AttributesDTO } from "shared/DTO/AttributesDTO";
+import { AttributeKey, ATTR_KEYS } from "shared/data/keys";
+import { AttributesDTO } from "shared/data";
 
 export type AttributeState = Record<AttributeKey, Fusion.Value<number>>;
 

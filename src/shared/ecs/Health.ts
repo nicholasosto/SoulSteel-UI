@@ -1,0 +1,1 @@
+import { BaseTrait } from "./BaseTrait";
